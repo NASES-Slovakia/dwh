@@ -1,0 +1,75 @@
+table iam_upvsiam_0001
+	lineageTag: 2acec7e4-99d6-4a67-a63b-ea21f516c851
+	sourceLineageTag: [dbo].[iam_upvsiam_0001]
+
+	column CODE
+		dataType: int64
+		formatString: 0
+		lineageTag: a3e76225-ca9c-45dc-8b1a-eef38a8b56e9
+		sourceLineageTag: CODE
+		summarizeBy: sum
+		sourceColumn: CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TITLESK
+		dataType: string
+		lineageTag: 34ee2a41-b047-4160-8483-fab77420f9b8
+		sourceLineageTag: TITLESK
+		summarizeBy: none
+		sourceColumn: TITLESK
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: bb5ffc3c-2dfd-447b-a08d-2e1e034333eb
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: 3bcb0d0b-2627-4c3c-8466-356c6fd15b42
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 17025c11-36a5-467d-9c04-5c32df02ec36
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 812773f6-6319-4882-9d3d-ba8fbd770c43
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 912ff8e5-f261-46be-901c-57ea3ffe223f
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iam_upvsiam_0001 = entity
+		mode: directLake
+		source
+			entityName: iam_upvsiam_0001
+			expressionSource: 'DirectLake - lh_bronze'
+

@@ -1,0 +1,105 @@
+table iam_delegation_type
+	lineageTag: b93f36a2-774d-4f4f-a4e1-75429b98725e
+	sourceLineageTag: [dbo].[iam_delegation_type]
+
+	column DELEGATION_TYPE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: fdb2bb1f-8a62-46b3-97de-43a336227a15
+		sourceLineageTag: DELEGATION_TYPE_ID
+		summarizeBy: count
+		sourceColumn: DELEGATION_TYPE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODE
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f08bdfd-0691-409a-b4e7-e568c5f77301
+		sourceLineageTag: CODE
+		summarizeBy: sum
+		sourceColumn: CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUE_SK
+		dataType: string
+		lineageTag: 1a1dd160-b0f9-498b-90ef-3564aa6be1da
+		sourceLineageTag: VALUE_SK
+		summarizeBy: none
+		sourceColumn: VALUE_SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALID
+		dataType: int64
+		formatString: 0
+		lineageTag: 90fb37bd-0ed6-42f3-ad67-03557ef7d765
+		sourceLineageTag: VALID
+		summarizeBy: count
+		sourceColumn: VALID
+
+		annotation SummarizationSetBy = Automatic
+
+	column REDELEGATION_ALLOWED
+		dataType: int64
+		formatString: 0
+		lineageTag: c6ed31aa-75a3-4c78-942a-efe72f47e450
+		sourceLineageTag: REDELEGATION_ALLOWED
+		summarizeBy: sum
+		sourceColumn: REDELEGATION_ALLOWED
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: a37ea956-bf54-4779-bc5b-c581b91f5f78
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: fb2607cd-631b-4e41-b815-0a6deb1206f3
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 901bdf66-1800-47d5-a6e1-8d320241629b
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 74b35dc7-c38a-46a4-9bf0-a7e7ce784c8a
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 7bc935fb-5814-404c-b3bd-d4dd299ee56b
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iam_delegation_type = entity
+		mode: directLake
+		source
+			entityName: iam_delegation_type
+			expressionSource: 'DirectLake - lh_bronze'
+

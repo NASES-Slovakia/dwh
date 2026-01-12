@@ -1,0 +1,95 @@
+table cnm_notification_history_attempt
+	lineageTag: 66599ec1-1696-4477-960d-ac80d96f6d26
+	sourceLineageTag: [dbo].[cnm_notification_history_attempt]
+
+	column _key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a4dee53-1885-4ce1-8c2e-72cef26b1d32
+		sourceLineageTag: _key
+		summarizeBy: sum
+		sourceColumn: _key
+
+		annotation SummarizationSetBy = Automatic
+
+	column history_key
+		dataType: int64
+		formatString: 0
+		lineageTag: c696327c-3458-4831-84d5-d4b49f4fe921
+		sourceLineageTag: history_key
+		summarizeBy: sum
+		sourceColumn: history_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column attempt
+		dataType: string
+		lineageTag: 1762a26d-eb61-4eb7-a3ce-d8020aef4d79
+		sourceLineageTag: attempt
+		summarizeBy: none
+		sourceColumn: attempt
+
+		annotation SummarizationSetBy = Automatic
+
+	column success
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 32f301d4-4eed-4e1a-a6a2-a5dd3ac0af56
+		sourceLineageTag: success
+		summarizeBy: none
+		sourceColumn: success
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: 019a702d-b584-486a-8f55-b96e784d05da
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: dd8bbb03-c255-45ad-9b4c-e73a3487efe1
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: bd9c6d25-2ae5-4d6c-bfec-4c979430d92d
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a5d006ec-4933-4214-98c7-048059ea306d
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: f7d3485a-5b31-4150-9946-5f8c5459e97c
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition cnm_notification_history_attempt = entity
+		mode: directLake
+		source
+			entityName: cnm_notification_history_attempt
+			expressionSource: 'DirectLake - lh_bronze'
+

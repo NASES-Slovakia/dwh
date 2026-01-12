@@ -1,0 +1,93 @@
+table sm_conversation_mukc_chat
+	lineageTag: d006dcf0-a75d-452d-a387-3a3a9687d8ed
+	sourceLineageTag: [dbo].[sm_conversation_mukc_chat]
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: c88d8b3a-379f-4e25-a7d2-d8ac2e586c41
+		sourceLineageTag: id
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column conversation_id
+		dataType: string
+		lineageTag: df0478aa-28f3-419a-a9e3-1a54b3a7733a
+		sourceLineageTag: conversation_id
+		summarizeBy: none
+		sourceColumn: conversation_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column mukc_chat_id
+		dataType: string
+		lineageTag: b2ebaf4a-99e6-421a-bac5-70698d276052
+		sourceLineageTag: mukc_chat_id
+		summarizeBy: none
+		sourceColumn: mukc_chat_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_on
+		dataType: string
+		lineageTag: bcb3f850-796b-4ad3-a7ae-c742426a5ba6
+		sourceLineageTag: created_on
+		summarizeBy: none
+		sourceColumn: created_on
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: da12f899-d9f5-4d21-8929-79d4caada850
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: 106dd261-6f3d-4c27-8800-81f4ef811b29
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 9ba59a02-3a36-427f-86fb-7ceb41f35e96
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1e46ac0b-a6a3-4f5d-86b1-71c689a49092
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 8ee0fac3-3bbf-4d59-9312-701b5f24510c
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sm_conversation_mukc_chat = entity
+		mode: directLake
+		source
+			entityName: sm_conversation_mukc_chat
+			expressionSource: 'DirectLake - lh_bronze'
+

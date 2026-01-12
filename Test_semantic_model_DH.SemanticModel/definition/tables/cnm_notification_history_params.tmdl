@@ -1,0 +1,84 @@
+table cnm_notification_history_params
+	lineageTag: d05255a1-5e0e-447f-a572-1ac6ed0e26d9
+	sourceLineageTag: [dbo].[cnm_notification_history_params]
+
+	column history_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 6592b8f5-f28b-4191-b658-b2ee09481e06
+		sourceLineageTag: history_key
+		summarizeBy: sum
+		sourceColumn: history_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 55198132-61a8-4fb4-a075-2296eca78b79
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: string
+		lineageTag: cc5417a7-f0e3-4967-bd63-275436c5edab
+		sourceLineageTag: value
+		summarizeBy: none
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: 81b118a3-8434-4622-bb3c-8c4ed946d241
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: a7605b1c-1bbd-4fd3-beb3-f61a8f977810
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 684c43db-c4f0-46da-9f1c-4c1427b55f95
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7a61d950-fee7-4081-80f0-5636170c50b5
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: ed46e3d8-2fd8-487c-a6cf-36a020d61961
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition cnm_notification_history_params = entity
+		mode: directLake
+		source
+			entityName: cnm_notification_history_params
+			expressionSource: 'DirectLake - lh_bronze'
+

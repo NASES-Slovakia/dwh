@@ -1,0 +1,185 @@
+table cud_report_deliveryinfo
+	lineageTag: e1eff984-afcf-4b8d-a1ba-9dd56027757c
+	sourceLineageTag: [dbo].[cud_report_deliveryinfo]
+
+	column _source_file
+		dataType: string
+		lineageTag: d939c5f4-9814-4c20-b1fe-c2c3e21cdab0
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: bc97423f-829e-4972-b4c2-05e75a0000e6
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 07de1996-e496-4975-9a27-eda1ba549010
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 128a26f7-a7f9-4745-8b63-0b0bb744205d
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 901641fe-0086-4718-a825-e039f5263b2d
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: 38061b12-c87c-4ed1-a182-2f10616c8343
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastDeliveryInfoReceivedTime
+		dataType: string
+		lineageTag: 4cb162a4-6dc8-4f09-b88a-52d5dbe1e8bc
+		sourceLineageTag: LastDeliveryInfoReceivedTime
+		summarizeBy: none
+		sourceColumn: LastDeliveryInfoReceivedTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreationTime
+		dataType: string
+		lineageTag: 842125f7-9fd4-4118-9fc8-3c6b31aaa074
+		sourceLineageTag: CreationTime
+		summarizeBy: none
+		sourceColumn: CreationTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: eb2c3a9b-d9a0-46ad-b29d-ecd0c0064fbe
+		sourceLineageTag: Type
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReceptionNumber
+		dataType: string
+		lineageTag: 37b3e7ec-a180-4e21-81b6-1d429b30a8fb
+		sourceLineageTag: ReceptionNumber
+		summarizeBy: none
+		sourceColumn: ReceptionNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column POBOX
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8eda9c70-274d-4ae3-bd8b-5104fb4d0d58
+		sourceLineageTag: POBOX
+		summarizeBy: none
+		sourceColumn: POBOX
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstAttemptDate
+		dataType: string
+		lineageTag: d211bd58-ccb8-4fc9-84ad-ad106e231270
+		sourceLineageTag: FirstAttemptDate
+		summarizeBy: none
+		sourceColumn: FirstAttemptDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column RepeatedAttemptDate
+		dataType: string
+		lineageTag: ee6cb3a8-7871-43ac-a52a-7d294f4a5a7f
+		sourceLineageTag: RepeatedAttemptDate
+		summarizeBy: none
+		sourceColumn: RepeatedAttemptDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column StorageDate
+		dataType: string
+		lineageTag: 9920d078-4594-41ab-b4af-c584fe8e8a76
+		sourceLineageTag: StorageDate
+		summarizeBy: none
+		sourceColumn: StorageDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeliveryDate
+		dataType: string
+		lineageTag: af7a49ef-ad9b-41d7-a577-381b3b76e086
+		sourceLineageTag: DeliveryDate
+		summarizeBy: none
+		sourceColumn: DeliveryDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLast
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 25ba491f-c8d3-4921-b005-a180ca570653
+		sourceLineageTag: IsLast
+		summarizeBy: none
+		sourceColumn: IsLast
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeliveryInfoReceivedTime
+		dataType: string
+		lineageTag: 1d4fb8ab-62f4-47d7-bd6d-37d3775c5596
+		sourceLineageTag: DeliveryInfoReceivedTime
+		summarizeBy: none
+		sourceColumn: DeliveryInfoReceivedTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnedReasonCode
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ceb71be-d8d9-4997-be81-2fd93fc80fd0
+		sourceLineageTag: ReturnedReasonCode
+		summarizeBy: count
+		sourceColumn: ReturnedReasonCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnedReasonDetails
+		dataType: string
+		lineageTag: f14f149b-2f82-48a3-866c-8e720439046f
+		sourceLineageTag: ReturnedReasonDetails
+		summarizeBy: none
+		sourceColumn: ReturnedReasonDetails
+
+		annotation SummarizationSetBy = Automatic
+
+	partition cud_report_deliveryinfo = entity
+		mode: directLake
+		source
+			entityName: cud_report_deliveryinfo
+			expressionSource: 'DirectLake - lh_bronze'
+

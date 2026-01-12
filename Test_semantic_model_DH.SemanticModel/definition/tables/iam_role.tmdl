@@ -1,0 +1,92 @@
+table iam_role
+	lineageTag: 8dc1aadf-c6b5-4162-bfa1-1f9b4d96e6a0
+	sourceLineageTag: [dbo].[iam_role]
+
+	column ROLENAME
+		dataType: string
+		lineageTag: 58a2adb7-dc4d-4eca-b576-c15edcdeca55
+		sourceLineageTag: ROLENAME
+		summarizeBy: none
+		sourceColumn: ROLENAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORY
+		dataType: string
+		lineageTag: 0ed35501-d188-44e3-9365-d1d470797ba1
+		sourceLineageTag: CATEGORY
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISPLAY_NAME
+		dataType: string
+		lineageTag: ef3df502-417f-42ea-b65b-c3e2fdc0d48d
+		sourceLineageTag: DISPLAY_NAME
+		summarizeBy: none
+		sourceColumn: DISPLAY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column IMPORT_DATE
+		dataType: string
+		lineageTag: e2fc67e9-13a0-4ac7-a1d1-f81c4bb96c23
+		sourceLineageTag: IMPORT_DATE
+		summarizeBy: none
+		sourceColumn: IMPORT_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: 35c8677a-de39-4baf-ab2a-af304132f0ff
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: 399fb468-db2f-40bc-81dd-d7f15bea1cdb
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 724de608-9fe6-499c-bac1-240689836ec9
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d62713c0-88a0-4754-82e6-43761d2f180f
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 0f9d6a60-126c-43a4-859a-4b86b0bd67cf
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iam_role = entity
+		mode: directLake
+		source
+			entityName: iam_role
+			expressionSource: 'DirectLake - lh_bronze'
+

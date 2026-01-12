@@ -1,0 +1,95 @@
+table profile_report
+	lineageTag: c334ba23-b987-4035-9eb7-35ee723d108a
+	sourceLineageTag: [dbo].[profile_report]
+
+	column table_name
+		dataType: string
+		lineageTag: 04fe224e-bfce-4770-9e4d-66683e60520d
+		sourceLineageTag: table_name
+		summarizeBy: none
+		sourceColumn: table_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column column_name
+		dataType: string
+		lineageTag: 72ee5631-3b2d-46b3-b3d6-0ee46a7b7c7b
+		sourceLineageTag: column_name
+		summarizeBy: none
+		sourceColumn: column_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column row_count
+		dataType: int64
+		formatString: 0
+		lineageTag: a76618d7-cb66-4c17-91d9-58fd32e56794
+		sourceLineageTag: row_count
+		summarizeBy: sum
+		sourceColumn: row_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column non_nulls
+		dataType: int64
+		formatString: 0
+		lineageTag: 2856e568-2c14-4b9f-8973-4eb8c6569729
+		sourceLineageTag: non_nulls
+		summarizeBy: sum
+		sourceColumn: non_nulls
+
+		annotation SummarizationSetBy = Automatic
+
+	column nulls
+		dataType: int64
+		formatString: 0
+		lineageTag: 89a997fd-d92f-411a-af7f-85b1716d1111
+		sourceLineageTag: nulls
+		summarizeBy: sum
+		sourceColumn: nulls
+
+		annotation SummarizationSetBy = Automatic
+
+	column distinct_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 207f27d5-a32e-4b0b-81f5-f1e67f7e9e86
+		sourceLineageTag: distinct_count
+		summarizeBy: sum
+		sourceColumn: distinct_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column min_value
+		dataType: string
+		lineageTag: 1257e5dc-8009-4409-ae77-81774bd78245
+		sourceLineageTag: min_value
+		summarizeBy: none
+		sourceColumn: min_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_value
+		dataType: string
+		lineageTag: b49b6f16-9be8-435b-95f5-2bbed06036ad
+		sourceLineageTag: max_value
+		summarizeBy: none
+		sourceColumn: max_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_type
+		dataType: string
+		lineageTag: 0fc3fda1-212d-4dd3-add5-8cea5b044840
+		sourceLineageTag: data_type
+		summarizeBy: none
+		sourceColumn: data_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition profile_report = entity
+		mode: directLake
+		source
+			entityName: profile_report
+			expressionSource: 'DirectLake - lh_bronze'
+

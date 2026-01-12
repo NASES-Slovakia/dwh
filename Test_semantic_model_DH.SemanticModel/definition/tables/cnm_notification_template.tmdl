@@ -1,0 +1,83 @@
+table cnm_notification_template
+	lineageTag: 1f1a12fe-0c8d-41a5-b79d-585668e44f70
+	sourceLineageTag: [dbo].[cnm_notification_template]
+
+	column _key
+		dataType: string
+		lineageTag: 9347a361-c316-4d60-9ab1-33922c142b60
+		sourceLineageTag: _key
+		summarizeBy: none
+		sourceColumn: _key
+
+		annotation SummarizationSetBy = Automatic
+
+	column _rev
+		dataType: string
+		lineageTag: e35357eb-82f8-4e26-aa8f-c22ca52d5c44
+		sourceLineageTag: _rev
+		summarizeBy: none
+		sourceColumn: _rev
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner
+		dataType: string
+		lineageTag: e82bdb57-28c4-423b-84b9-9836ad64e771
+		sourceLineageTag: owner
+		summarizeBy: none
+		sourceColumn: owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: 419b52c3-4dcd-4504-98ac-dd1dd1ec3ed3
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: 8a412aa8-621a-4677-8bd6-b7b8fd78fc36
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: db768d35-7613-480f-9251-a831f40907f3
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 423170d5-799f-4b02-869b-778feb524c64
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 5f8ef8ca-b35f-44e6-bc67-c62ba52b487f
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition cnm_notification_template = entity
+		mode: directLake
+		source
+			entityName: cnm_notification_template
+			expressionSource: 'DirectLake - lh_bronze'
+

@@ -1,0 +1,166 @@
+table cud_report_printinfo
+	lineageTag: 840ecbc4-94ca-4b11-ba59-68bbf1ae2e93
+	sourceLineageTag: [dbo].[cud_report_printinfo]
+
+	column _source_file
+		dataType: string
+		lineageTag: 73fc96ec-3cba-43df-97c3-7c3694f58603
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: 2ccd0ba7-bed3-40a3-a35e-1b3a4f959173
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: cb82f543-a8e4-4736-8b69-92db879f3301
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8bc39688-a6ae-4207-a26b-a4f81ed19243
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 5af4c0c0-0fe6-4ade-8824-26c2377d307d
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: c974414f-e7b9-4397-9be4-d0054187bfa0
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrintInfoReceivedTime
+		dataType: string
+		lineageTag: ab767d87-a255-4dd2-b8c2-bc0aa6b07f14
+		sourceLineageTag: PrintInfoReceivedTime
+		summarizeBy: none
+		sourceColumn: PrintInfoReceivedTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreationTime
+		dataType: string
+		lineageTag: f96707d5-3b7c-4b71-904c-2c41cc430be1
+		sourceLineageTag: CreationTime
+		summarizeBy: none
+		sourceColumn: CreationTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 8921cad5-493c-4b62-9913-826c925bc981
+		sourceLineageTag: Type
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column RejectedCode
+		dataType: int64
+		formatString: 0
+		lineageTag: 05aa92a6-88fc-4a1b-bbd0-4fe1beb570c8
+		sourceLineageTag: RejectedCode
+		summarizeBy: count
+		sourceColumn: RejectedCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column RejectedDetails
+		dataType: string
+		lineageTag: bba29a66-eb72-4f87-b96f-346d1cfeaf47
+		sourceLineageTag: RejectedDetails
+		summarizeBy: none
+		sourceColumn: RejectedDetails
+
+		annotation SummarizationSetBy = Automatic
+
+	column RejectedDescription
+		dataType: string
+		lineageTag: 8eeb33d3-4fec-4025-a3b2-40683a4724b1
+		sourceLineageTag: RejectedDescription
+		summarizeBy: none
+		sourceColumn: RejectedDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptedReceptionNumber
+		dataType: string
+		lineageTag: da3ebbfe-ae4d-4911-9f5b-8d53c4cdb923
+		sourceLineageTag: AcceptedReceptionNumber
+		summarizeBy: none
+		sourceColumn: AcceptedReceptionNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptedReceptionDate
+		dataType: string
+		lineageTag: 0fa1bd03-a86f-446e-a1fc-ebabb89710c3
+		sourceLineageTag: AcceptedReceptionDate
+		summarizeBy: none
+		sourceColumn: AcceptedReceptionDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptedDeliveryMethod
+		dataType: string
+		lineageTag: 711925e7-68eb-4e14-ab20-c691d6550f5c
+		sourceLineageTag: AcceptedDeliveryMethod
+		summarizeBy: none
+		sourceColumn: AcceptedDeliveryMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptedDeliveryChangedReason
+		dataType: string
+		lineageTag: a9c676be-4576-4cdb-bb48-11e71b5fbc2e
+		sourceLineageTag: AcceptedDeliveryChangedReason
+		summarizeBy: none
+		sourceColumn: AcceptedDeliveryChangedReason
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptedExpectDeliveryInfo
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 346c1ec3-4eae-4d92-815b-d5b09fb13f38
+		sourceLineageTag: AcceptedExpectDeliveryInfo
+		summarizeBy: none
+		sourceColumn: AcceptedExpectDeliveryInfo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition cud_report_printinfo = entity
+		mode: directLake
+		source
+			entityName: cud_report_printinfo
+			expressionSource: 'DirectLake - lh_bronze'
+

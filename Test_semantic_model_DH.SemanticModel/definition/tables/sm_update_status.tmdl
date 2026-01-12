@@ -1,0 +1,93 @@
+table sm_update_status
+	lineageTag: 6d95c838-7ec5-4245-b410-397fe40158d3
+	sourceLineageTag: [dbo].[sm_update_status]
+
+	column table_name
+		dataType: string
+		lineageTag: e4dae21f-bf38-4d9c-8a1f-8dbf8902b125
+		sourceLineageTag: table_name
+		summarizeBy: none
+		sourceColumn: table_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column update_in_progress
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 736d743e-6d31-4302-b456-552d4bdfe216
+		sourceLineageTag: update_in_progress
+		summarizeBy: none
+		sourceColumn: update_in_progress
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_update_started_on
+		dataType: string
+		lineageTag: 1239d4cd-5ae4-4c20-9fb2-dbd07f5325d7
+		sourceLineageTag: last_update_started_on
+		summarizeBy: none
+		sourceColumn: last_update_started_on
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_update_finished_on
+		dataType: string
+		lineageTag: 070f4294-7ac2-415e-828b-82ffccc4771e
+		sourceLineageTag: last_update_finished_on
+		summarizeBy: none
+		sourceColumn: last_update_finished_on
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: 28480162-01ef-4e2f-9d11-e5dc48aba713
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: 2a15ecfa-a3b3-4c5a-bb34-19b5a18fe25a
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 42e5ccc6-8fb0-44bb-8c17-54fe8004d824
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 210d5ce7-2cc1-47f8-af2f-6ad161424cf2
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 8e4775de-bff1-4d2e-8c3a-fd56b56debd6
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sm_update_status = entity
+		mode: directLake
+		source
+			entityName: sm_update_status
+			expressionSource: 'DirectLake - lh_bronze'
+

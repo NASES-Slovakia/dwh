@@ -1,0 +1,83 @@
+table iam_role_identity
+	lineageTag: 66812a54-1535-4631-a753-9efe05593c03
+	sourceLineageTag: [dbo].[iam_role_identity]
+
+	column IDENITTYID
+		dataType: string
+		lineageTag: fa5d5257-d90f-44c0-affa-6504867d8361
+		sourceLineageTag: IDENITTYID
+		summarizeBy: none
+		sourceColumn: IDENITTYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ROLENAME
+		dataType: string
+		lineageTag: fcb9063f-e359-4496-b0db-5efa28504858
+		sourceLineageTag: ROLENAME
+		summarizeBy: none
+		sourceColumn: ROLENAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column IMPORT_DATE
+		dataType: string
+		lineageTag: 4093267b-1bde-4f9e-a536-9dbc1943e38a
+		sourceLineageTag: IMPORT_DATE
+		summarizeBy: none
+		sourceColumn: IMPORT_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: e6b839ea-80a8-4db0-aa37-c94d01149050
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: be1475de-6eb2-4bab-b9ac-f8566cf3a2c7
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 7d7b311d-24f1-4b08-943d-5a12d46e388f
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: db206db8-279e-47a6-bdc6-6c5df9e37d36
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: a1b3f032-cf39-441a-855f-22970f1ef6ea
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iam_role_identity = entity
+		mode: directLake
+		source
+			entityName: iam_role_identity
+			expressionSource: 'DirectLake - lh_bronze'
+

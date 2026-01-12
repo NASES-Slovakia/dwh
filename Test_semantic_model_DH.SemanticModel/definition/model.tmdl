@@ -1,0 +1,55 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectLake - lh_bronze"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb"]
+
+ref table iam_delegation_role
+ref table iam_delegation_type
+ref table cnm_notification_queue
+ref table iam_upvsiam_0003
+ref table cnm_notification_queue_params
+ref table iam_susr_0024
+ref table iam_susr_0025
+ref table iam_delegation
+ref table iam_upvsiam_0001
+ref table iam_auth_resource_type
+ref table iam_usr
+ref table cud_report_printinfo
+ref table cud_report_deliveryinfo
+ref table cud_report_final
+ref table cud_report_senttosp
+ref table cud_report_received
+ref table cud_report_senttospobjects
+ref table g2g_all_sklog
+ref table g2g_messages_received
+ref table sm_conversation_user
+ref table sm_conversation
+ref table sm_event
+ref table sm_conversation_mukc_chat
+ref table sm_update_status
+ref table profile_report
+ref table cnm_notification_history_params
+ref table cnm_planned_job
+ref table cnm_notification_template_text
+ref table cnm_notification_history
+ref table cnm_notification_template
+ref table cnm_notification_history_attempt
+ref table cnm_notification
+ref table cnm_notification_template_images
+ref table iam_susr_3003
+ref table cnm_notification_template_params
+ref table iam_susr_0056
+ref table iam_role
+ref table iam_associated_auth_resource
+ref table iam_susr_0086
+ref table iam_role_identity
+

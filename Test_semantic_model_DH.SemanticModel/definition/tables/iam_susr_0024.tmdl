@@ -1,0 +1,74 @@
+table iam_susr_0024
+	lineageTag: 6d1d95f0-4d61-496d-9668-936fd355bc8e
+	sourceLineageTag: [dbo].[iam_susr_0024]
+
+	column CODE
+		dataType: string
+		lineageTag: 7a026773-e225-418a-a56e-cedc23c347ef
+		sourceLineageTag: CODE
+		summarizeBy: none
+		sourceColumn: CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TITLESK
+		dataType: string
+		lineageTag: c1ad67ab-c515-45e9-8299-d0cba03a7748
+		sourceLineageTag: TITLESK
+		summarizeBy: none
+		sourceColumn: TITLESK
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: 8d24974c-53d4-4074-8362-b70d2d0e48b2
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: 4aaa61df-487a-477c-bb9e-e7c8cc4b4253
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 2a49e6ca-e21a-4a28-83a6-ac4debd86e87
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f372e48f-afde-4448-a799-b1444add2c05
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: 92308920-64d3-4866-b6c3-e055edb6a035
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition iam_susr_0024 = entity
+		mode: directLake
+		source
+			entityName: iam_susr_0024
+			expressionSource: 'DirectLake - lh_bronze'
+

@@ -1,0 +1,204 @@
+table sm_event
+	lineageTag: 03534285-259d-4f24-b0df-7980bece0101
+	sourceLineageTag: [dbo].[sm_event]
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: f11a8020-e939-49d5-a87b-92600ad28620
+		sourceLineageTag: id
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column conversation_id
+		dataType: string
+		lineageTag: da7a74c7-0ebb-4104-a6a3-83da94e116f6
+		sourceLineageTag: conversation_id
+		summarizeBy: none
+		sourceColumn: conversation_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_timestamp
+		dataType: string
+		lineageTag: 776769ec-d6bb-43c8-a0f3-62718daf7150
+		sourceLineageTag: event_timestamp
+		summarizeBy: none
+		sourceColumn: event_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column event_type
+		dataType: string
+		lineageTag: 22852b02-4506-47c6-a247-5982d355bd2b
+		sourceLineageTag: event_type
+		summarizeBy: none
+		sourceColumn: event_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column message_type
+		dataType: string
+		lineageTag: add59560-7fc6-4629-8a34-b4ea41da338c
+		sourceLineageTag: message_type
+		summarizeBy: none
+		sourceColumn: message_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column message_content
+		dataType: string
+		lineageTag: 9740cc3a-9c7e-46f7-b7ce-4b7c4bfd06ac
+		sourceLineageTag: message_content
+		summarizeBy: none
+		sourceColumn: message_content
+
+		annotation SummarizationSetBy = Automatic
+
+	column message_winning_intent
+		dataType: string
+		lineageTag: 4c9d13ee-5dcf-4525-99ce-182d4aa87a85
+		sourceLineageTag: message_winning_intent
+		summarizeBy: none
+		sourceColumn: message_winning_intent
+
+		annotation SummarizationSetBy = Automatic
+
+	column message_winning_intent_confidence
+		dataType: double
+		lineageTag: 3052447a-1dc5-462f-84df-1a37c37ca748
+		sourceLineageTag: message_winning_intent_confidence
+		summarizeBy: sum
+		sourceColumn: message_winning_intent_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column message_invalid_intent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e7508972-392a-4078-ab0c-7c8a1e1fafb9
+		sourceLineageTag: message_invalid_intent
+		summarizeBy: none
+		sourceColumn: message_invalid_intent
+
+		annotation SummarizationSetBy = Automatic
+
+	column action_name
+		dataType: string
+		lineageTag: 3cb403d8-6738-47d7-a4ce-49cd0e59f482
+		sourceLineageTag: action_name
+		summarizeBy: none
+		sourceColumn: action_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column action_data
+		dataType: string
+		lineageTag: 0f5a61b2-ac36-4b0f-9502-36e050410e9e
+		sourceLineageTag: action_data
+		summarizeBy: none
+		sourceColumn: action_data
+
+		annotation SummarizationSetBy = Automatic
+
+	column slot_name
+		dataType: string
+		lineageTag: 47624a35-85dd-4036-9cde-ff245767d031
+		sourceLineageTag: slot_name
+		summarizeBy: none
+		sourceColumn: slot_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column slot_value
+		dataType: string
+		lineageTag: cab75da2-a495-403f-a21d-405485c64f13
+		sourceLineageTag: slot_value
+		summarizeBy: none
+		sourceColumn: slot_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column operator_id
+		dataType: string
+		lineageTag: 68cb66c3-1bc5-4ebe-8743-3907a24bf19c
+		sourceLineageTag: operator_id
+		summarizeBy: none
+		sourceColumn: operator_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column operator_display_name
+		dataType: string
+		lineageTag: 76638071-c5ff-4396-a2ae-143679930db7
+		sourceLineageTag: operator_display_name
+		summarizeBy: none
+		sourceColumn: operator_display_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_on
+		dataType: string
+		lineageTag: 17c95d6d-30c5-458f-b93a-8bde3d234074
+		sourceLineageTag: created_on
+		summarizeBy: none
+		sourceColumn: created_on
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: 8ecf657a-7d01-4e8b-8338-c1c743fb6bc2
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _batch_day
+		dataType: string
+		lineageTag: 2ef15ec9-c3df-4afc-b7e5-c19d912b615c
+		sourceLineageTag: _batch_day
+		summarizeBy: none
+		sourceColumn: _batch_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column _row_hash
+		dataType: string
+		lineageTag: 23e2eac0-9984-404c-9553-1b4534a75ec9
+		sourceLineageTag: _row_hash
+		summarizeBy: none
+		sourceColumn: _row_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column _load_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fa02d8b1-4ba1-4f70-9738-69b69eb25194
+		sourceLineageTag: _load_timestamp
+		summarizeBy: none
+		sourceColumn: _load_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _job_id
+		dataType: string
+		lineageTag: d18cd829-c6b3-4ca2-8c22-d5504943bd2d
+		sourceLineageTag: _job_id
+		summarizeBy: none
+		sourceColumn: _job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sm_event = entity
+		mode: directLake
+		source
+			entityName: sm_event
+			expressionSource: 'DirectLake - lh_bronze'
+
