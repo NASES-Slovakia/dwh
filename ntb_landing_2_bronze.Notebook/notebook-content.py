@@ -20,18 +20,15 @@
 # META         }
 # META       ]
 # META     },
-# META     "environment": {
-# META       "environmentId": "2fbb6354-0f0b-a1c8-4a19-b02cd16a70f2",
-# META       "workspaceId": "00000000-0000-0000-0000-000000000000"
-# META     }
+# META     "environment": {}
 # META   }
 # META }
 
 # PARAMETERS CELL ********************
 
 job_id = '20251209142500'
-source_system = 'SM'
-batch_day = '20251218'
+source_system = 'METAIS'
+batch_day = '20260218'
 pipeline_name ='NoPipeline'
 
 # METADATA ********************
@@ -161,7 +158,7 @@ from delta.tables import DeltaTable
 import os
 import uuid
 #Custom library for logging
-import adastra_etl as etl
+#import adastra_etl as etl
 
 source_base_path = f"Files/{source_system}"
 lakehouse_name = "lh_bronze"
@@ -232,10 +229,18 @@ def load_table_to_bronze(table_name, source_system_name, batch_day):
 
     try:
         # Check if any AVRO files exist
-        files = mssparkutils.fs.ls(table_path)
-        avro_files = [f for f in files if f.name.endswith('.avro')]
+        #files = mssparkutils.fs.ls(table_path)
+        #avro_files = [f for f in files if f.name.endswith('.avro')]
         
-        if not avro_files:
+        files = [
+            f for f in mssparkutils.fs.ls(table_path)
+            if f.name.endswith(".avro") and f"_{batch_day}_" in f.name
+        ]
+
+        latest_file = max(files, key=lambda f: f.modifyTime)
+        latest_path = latest_file.path
+
+        if not files:
             print(f"  ⚠ No AVRO files found in {table_path} - skipping")
             log_pipeline_end(
                 log_id=log_id,
@@ -251,13 +256,14 @@ def load_table_to_bronze(table_name, source_system_name, batch_day):
             )
             return False
         
-        print(f"  Found {len(avro_files)} AVRO file(s)")
+        print(f"  Found {len(files)} AVRO file(s)")
         
         # Read all AVRO files in the folder
         df = spark.read \
             .format("avro") \
             .option("recursiveFileLookup", "false") \
-            .load(f"{table_path}/*_{batch_day}_*.avro")
+            .load(latest_path)
+            #.load(f"{table_path}/*_{batch_day}_*.avro")
         
         # Get record count
         record_count = df.count()
@@ -366,7 +372,7 @@ def load_table_to_bronze(table_name, source_system_name, batch_day):
                 print("  Current batch days in table:")
                 spark.table(bronze_table).select("_batch_day").distinct().orderBy("_batch_day").show(truncate=False)
                 
-                log_pipeline_start_end(
+                log_pipeline_end(
                     log_id=log_id,
                     batch_day=batch_day,
                     source_table=source_table_full,
@@ -464,138 +470,3 @@ main()
 
 # MARKDOWN ********************
 
-
-# MARKDOWN ********************
-
-# **OLD CSV loader**
-
-# CELL ********************
-
-"""
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import (
-    col, current_timestamp, input_file_name, 
-    sha2, concat_ws, coalesce, lit, struct, to_json
-)
-from pyspark.sql.types import *
-from datetime import datetime
-import os
-
-# Configuration
-source_base_path = "Files/CNM"
-lakehouse_name = "lh_bronze"
-folder_name = os.path.basename(source_base_path).lower()  # Fixed: .lower() instead of lower()
-job_id = lit(datetime.now().strftime("%Y%m%d_%H%M%S"))  # Added: wrap in lit() for PySpark
-
-# Initialize Spark session (already available in Fabric notebook)
-spark = spark
-
-# Add audit columns for bronze layer
-def add_bronze_metadata(df):
-    """Add standard bronze layer metadata columns"""
-    return df \
-        .withColumn("_row_hash", sha2(concat_ws("||", *[coalesce(col(c).cast("string"), lit("")) for c in df.columns]), 256)) \
-        .withColumn("_load_timestamp", current_timestamp()) \
-        .withColumn("_source_file", input_file_name()) \
-        .withColumn("_job_id", job_id)
-        
-
-# Get list of subfolders (table names)
-def get_table_folders(base_path):
-    """Get list of subfolders representing tables"""
-    try:
-        folders = mssparkutils.fs.ls(base_path)
-        table_folders = [f.name for f in folders if f.isDir]
-        return table_folders
-    except Exception as e:
-        print(f"Error reading folders from {base_path}: {str(e)}")
-        return []
-
-# Load CSV files from a table folder
-def load_table_to_bronze(table_name, source_system):
-    """Load all CSV files from a table folder to bronze layer"""
-    
-    table_path = f"{source_base_path}/{table_name}"
-    print(f"\nProcessing table: {table_name}")
-    print(f"Source path: {table_path}")
-    
-    try:
-        # Read all CSV files in the folder
-        df = spark.read \
-            .option("header", "true") \
-            .option("inferSchema", "true") \
-            .option("recursiveFileLookup", "false") \
-            .option("delimiter",';') \
-            .csv(f"{table_path}/*.csv")
-        
-        # Check if any data was loaded
-        record_count = df.count()
-        print(f"Records found: {record_count}")
-        
-        if record_count == 0:
-            print(f"No data found in {table_path}")
-            return False
-        
-        # Add bronze metadata columns
-        df_bronze = add_bronze_metadata(df)
-        
-        # Write to bronze delta table
-        bronze_table = f"{source_system}_{table_name}"
-        
-        df_bronze.write \
-            .format("delta") \
-            .mode("append") \
-            .option("mergeSchema", "true") \
-            .saveAsTable(bronze_table)
-        
-        print(f"✓ Successfully loaded {record_count} records to {bronze_table}")
-        return True
-        
-    except Exception as e:
-        print(f"✗ Error loading table {table_name}: {str(e)}")
-        return False
-
-# Main execution
-def main():
-    """Main execution function"""
-    
-    print("="*80)
-    print("Bronze Load Process Started")
-    print(f"Timestamp: {datetime.now()}")
-    print("="*80)
-    
-    # Get all table folders
-    table_folders = get_table_folders(source_base_path)
-    
-    if not table_folders:
-        print(f"No subfolders found in {source_base_path}")
-        return
-    
-    print(f"\nFound {len(table_folders)} table folders: {table_folders}")
-    
-    # Process each table
-    results = {}
-    for table_name in table_folders:
-        success = load_table_to_bronze(table_name,folder_name)
-        results[table_name] = "Success" if success else "Failed"
-    
-    # Summary
-    print("\n" + "="*80)
-    print("Bronze Load Summary")
-    print("="*80)
-    for table, status in results.items():
-        status_symbol = "✓" if status == "Success" else "✗"
-        print(f"{status_symbol} {table}: {status}")
-    
-    print("\nProcess completed!")
-
-# Execute
-main()
-"""
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }

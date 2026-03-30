@@ -33,8 +33,8 @@
 # PARAMETERS CELL ********************
 
 job_id = '20251209142500'
-source_system = 'SM'
-batch_day = '20251218'
+source_system = 'CNM'
+batch_day = '20251222'
 pipeline_name ='ntb_silver_2_gold'
 
 # METADATA ********************
@@ -75,7 +75,7 @@ import uuid
 # Configuration
 # ============================================================================
 
-batch_day = "20251218"
+#batch_day = "20251218"
 job_id = datetime.now().strftime("%Y%m%d_%H%M%S")
 job_id_str = str(job_id)
 pipeline_name = "ntb_silver_2_gold"
@@ -179,14 +179,17 @@ def log_pipeline_end(log_id, batch_day, source_table, target_table,
 # CELL ********************
 
 # Get all tables from lh_silver lakehouse
-tables = spark.catalog.listTables("lh_silver")
-
+tables = [
+    t
+    for t in spark.catalog.listTables("lh_silver")
+    if t.tableType == "MANAGED"
+]
 # Collect column info for all tables
 all_columns = []
 
 for table in tables:
     table_name = f"lh_silver.{table.name}"
-    
+
     try:
         # Get columns for this table
         columns = spark.table(table_name).columns
@@ -229,10 +232,10 @@ select distinct
  from lh_metadata.table_config tc
 left join lh_metadata.table_type_config tt 
     on tt.system = tc.system
-    and tc.nazov_tabulky = tt.nazov_tabulky_bronze
+    and upper(tc.nazov_tabulky) = upper(tt.nazov_tabulky_bronze)
 left join column_info ci
-    on ci.table_name = tc.nazov_tabulky
-    and ci.column_name = tc.atribut
+    on upper(ci.table_name) = upper(tc.nazov_tabulky)
+    and upper(ci.column_name) = upper(tc.atribut)
 where tc.system like '%DEV'
 order by silver_table_name, ordinal_position
 """)
@@ -253,24 +256,98 @@ df.write \
 # META   "language_group": "synapse_pyspark"
 # META }
 
-# MARKDOWN ********************
+# CELL ********************
 
-# **Silver to Bronze processing**
+# MAGIC %%sql 
+# MAGIC select * from lh_metadata.table_config where system like '%DEV'
+
+# METADATA ********************
+
+# META {
+# META   "language": "sparksql",
+# META   "language_group": "synapse_pyspark"
+# META }
 
 # CELL ********************
 
-from pyspark.sql import DataFrame
+# MAGIC %%sql
+# MAGIC select distinct 
+# MAGIC     tt.typ as table_type, --DIM/FACT
+# MAGIC     tt.nazov_tabulky_gold as gold_table_name,
+# MAGIC     tc.nazov_tabulky as silver_table_name,
+# MAGIC     tc.atribut as silver_column_name,
+# MAGIC     tc.gold_name as gold_column_name,
+# MAGIC     tc.data_type_final as gold_column_data_type,
+# MAGIC     case when tc.povinny = 'ano' then TRUE ELSE FALSE END AS gold_column_is_nullable,
+# MAGIC     case when tc.`pk?` = 'PK' then TRUE ELSE FALSE END AS gold_column_is_pk,
+# MAGIC     ci.ordinal_position
+# MAGIC --,*
+# MAGIC  from lh_metadata.table_config tc
+# MAGIC left join lh_metadata.table_type_config tt 
+# MAGIC     on tt.system = tc.system
+# MAGIC     and upper(tc.nazov_tabulky) = upper(tt.nazov_tabulky_bronze)
+# MAGIC left join column_info ci
+# MAGIC     on upper(ci.table_name) = upper(tc.nazov_tabulky)
+# MAGIC     and upper(ci.column_name) = upper(tc.atribut)
+# MAGIC where /*tc.system like '%DEV' and */ tc.nazov_tabulky like 'cnm%'
+# MAGIC order by silver_table_name, ordinal_position
+
+# METADATA ********************
+
+# META {
+# META   "language": "sparksql",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# MARKDOWN ********************
+
+# **Silver to Gold processing**
+
+# CELL ********************
+
+from pyspark.sql import DataFrame,Column, functions as F
 from pyspark.sql.functions import (
     col, current_timestamp, lit, when, coalesce, concat_ws, sha2, 
     to_json, struct, md5, row_number, max as spark_max
 )
+#from pyspark.sql import functions as F
+from pyspark.sql.types import BooleanType, TimestampType
 from pyspark.sql.window import Window
 from delta.tables import DeltaTable
 from datetime import datetime
 
 # ============================================================================
-# SCD2 and FACT Processing Functions
+# SCD2 and FACT Processing & Helper Functions
 # ============================================================================
+def normalize_boolean(col: Column) -> Column:
+    col_str = F.lower(F.trim(col.cast("string")))
+
+    return (
+        F.when(col.isNull(), F.lit(None).cast("boolean"))
+         .when(col_str.isin("1", "true", "t", "yes", "y", "on"), F.lit(True))
+         .when(col_str.isin("0", "false", "f", "no", "n", "off"), F.lit(False))
+         .otherwise(F.lit(None).cast("boolean"))
+    )
+
+def apply_boolean_normalization(df: DataFrame, df_meta: DataFrame) -> DataFrame:
+    """
+    Normalize boolean columns based on gold metadata.
+    Applies ONLY to columns marked as boolean in metadata.
+    """
+
+    boolean_cols = (
+        df_meta
+        .filter(F.lower(F.col("gold_column_data_type")) == "boolean")
+        .select("silver_column_name")
+        .rdd.flatMap(lambda x: x)
+        .collect()
+    )
+
+    for c in boolean_cols:
+        if c in df.columns:
+            df = df.withColumn(c, normalize_boolean(F.col(c)))
+
+    return df
 
 def get_table_metadata(gold_table_name):
     """
@@ -302,7 +379,7 @@ def get_table_metadata(gold_table_name):
 def get_business_key_columns(df_meta):
     """Get primary key columns from metadata"""
     pk_cols = df_meta.filter(col("gold_column_is_pk") == True) \
-                     .select("gold_column_name") \
+                     .select("silver_column_name") \
                      .rdd.flatMap(lambda x: x).collect()
     
     if not pk_cols:
@@ -382,6 +459,9 @@ def process_dim_scd2(silver_table_name, gold_table_name, batch_day,
     try:
         # Read source data from silver
         df_silver = spark.table(f"lh_silver.{silver_table_name}")
+        # 🔑 Normalize boolean columns BEFORE hashing
+        df_silver = apply_boolean_normalization(df_silver, df_meta)
+ 
         rows_read = df_silver.count()
         print(f"  📊 Silver records: {rows_read:,}")
         
@@ -397,6 +477,8 @@ def process_dim_scd2(silver_table_name, gold_table_name, batch_day,
             .withColumn("_valid_from", current_timestamp()) \
             .withColumn("_valid_to", lit(None).cast(TimestampType()))
         
+        df_silver_prepared.createOrReplaceTempView("silver_temp")
+
         # Check if target table exists
         target_table_path = f"lh_gold.{gold_table_name}"
         table_exists = spark.catalog.tableExists(target_table_path)
@@ -442,13 +524,14 @@ def process_dim_scd2(silver_table_name, gold_table_name, batch_day,
             # Get records that were just closed (updated)
             df_closed = spark.sql(f"""
                 SELECT source.*
-                FROM ({df_silver_prepared.createOrReplaceTempView("silver_temp")} silver_temp) source
+                FROM silver_temp source
                 INNER JOIN {target_table_path} target
                     ON {" AND ".join([f"target.{pk} = source.{pk}" for pk in pk_columns])}
-                WHERE target._is_current = false 
-                    AND target._valid_to >= current_timestamp() - INTERVAL 1 MINUTE
-                    AND target._content_hash <> source._content_hash
+                WHERE target._is_current = false
+                AND target._valid_to >= current_timestamp() - INTERVAL 1 MINUTE
+                AND target._content_hash <> source._content_hash
             """)
+
             
             if df_closed.count() > 0:
                 # Insert new current versions
@@ -514,6 +597,9 @@ def process_fact_append(silver_table_name, gold_table_name, batch_day, job_id_st
     try:
         # Read source data from silver
         df_silver = spark.table(f"lh_silver.{silver_table_name}")
+        # Normalize booleans for FACT too
+        df_silver = apply_boolean_normalization(df_silver, df_meta)
+
         rows_read = df_silver.count()
         print(f"  📊 Silver records: {rows_read:,}")
         
@@ -673,6 +759,14 @@ def process_all_gold_tables(batch_day, job_id_str=None, exclude_from_comparison=
         ORDER BY table_type, gold_table_name
     """)
     
+
+    # Filter for tables matching the source_system prefix (e.g., 'iam_')
+    prefix = source_system.lower() + "_"
+    df_tables = df_tables.filter(col("silver_table_name").startswith(prefix))
+
+    print(f"Found {df_tables.count()} tables in metadata for source_system='{source_system}'")
+
+
     tables = df_tables.collect()
     
     print(f"Found {len(tables)} tables to process\n")
@@ -757,7 +851,7 @@ def process_all_gold_tables(batch_day, job_id_str=None, exclude_from_comparison=
 #     exclude_from_comparison=["last_modified_by", "audit_timestamp"]
 # )
 results = process_all_gold_tables(
-     batch_day="20251218",
+     batch_day=batch_day,
      job_id_str=job_id_str,
      exclude_from_comparison=["last_modified_by", "audit_timestamp"]
  )
@@ -777,8 +871,11 @@ results = process_all_gold_tables(
 # CELL ********************
 
 # Get all tables from lh_silver lakehouse
-tables = spark.catalog.listTables("lh_gold")
-
+tables = [
+    t
+    for t in spark.catalog.listTables("lh_gold")
+    if t.tableType == "MANAGED"
+]
 # Collect column info for all tables
 all_columns = []
 
@@ -817,23 +914,72 @@ print(f"\n✓ Created temp view 'column_info_gold' with {df_column_info.count()}
 # META   "language_group": "synapse_pyspark"
 # META }
 
+# CELL ********************
+
+# MAGIC %%sql
+# MAGIC select * from lh_metadata.metadata_table_column_setup order by silver_table_name
+
+# METADATA ********************
+
+# META {
+# META   "language": "sparksql",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+# MAGIC %%sql
+# MAGIC     SELECT 
+# MAGIC         ci.table_name AS gold_table_name,
+# MAGIC         ci.ordinal_position,
+# MAGIC         ci.column_name AS silver_column_name,
+# MAGIC         COALESCE(c.gold_column_name, ci.column_name) AS gold_column_name,
+# MAGIC         c.gold_column_name
+# MAGIC     FROM column_info_gold ci
+# MAGIC     LEFT JOIN lh_metadata.metadata_table_column_setup c
+# MAGIC         ON upper(ci.table_name) = upper(c.gold_table_name)
+# MAGIC        AND upper(ci.column_name) = upper(c.silver_column_name)
+
+# METADATA ********************
+
+# META {
+# META   "language": "sparksql",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+# MAGIC %%sql
+# MAGIC SELECT *  FROM gold_gen_metadata where gold_column_name like 'NaN'
+
+# METADATA ********************
+
+# META {
+# META   "language": "sparksql",
+# META   "language_group": "synapse_pyspark"
+# META }
+
 # MARKDOWN ********************
 
 # **Generate Create scripts for Gold layer**
 
 # CELL ********************
 
-df=spark.sql("""
-    selecT 
-        ci.table_name as gold_table_name,
+prefix = source_system.lower() + "_"
+
+df = spark.sql(f"""
+    SELECT 
+        ci.table_name AS gold_table_name,
         ci.ordinal_position,
-        ci.column_name as silver_column_name,
-        coalesce(c.gold_column_name,ci.column_name) as gold_column_name
-    from column_info_gold ci
-    left join lh_metadata.metadata_table_column_setup c
-    on ci.table_name = c.gold_table_name
-    and ci.column_name = c.silver_column_name
+        ci.column_name AS silver_column_name,
+        COALESCE(c.gold_column_name, ci.column_name) AS gold_column_name
+    FROM column_info_gold ci
+    LEFT JOIN lh_metadata.metadata_table_column_setup c
+        ON upper(ci.table_name) = upper(c.gold_table_name)
+       AND upper(ci.column_name) = upper(c.silver_column_name)
+--    WHERE ci.table_name LIKE 'prefix%'
 """)
+
 df.createOrReplaceTempView("gold_gen_metadata")
 
 df_gen=spark.sql("""
@@ -928,3 +1074,15 @@ print("✅ GoldViewGenerator.sql created successfully")
 # MARKDOWN ********************
 
 # **Don't forget deploy views in wh_gold**
+
+# CELL ********************
+
+# MAGIC %%sql 
+# MAGIC select * from lh_metadata.gold_view_generator_sql
+
+# METADATA ********************
+
+# META {
+# META   "language": "sparksql",
+# META   "language_group": "synapse_pyspark"
+# META }

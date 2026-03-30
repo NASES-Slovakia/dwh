@@ -22,15 +22,16 @@
 # META           "id": "7dfcb8da-b093-42d8-8600-9f05ef2ddc08"
 # META         }
 # META       ]
-# META     }
+# META     },
+# META     "environment": {}
 # META   }
 # META }
 
 # CELL ********************
 
 job_id = '20251209142500'
-source_system = 'SM'
-batch_day = '20251218'
+source_system = 'EDESK'
+batch_day = '20251222'
 pipeline_name ='ntb_bronze_2_silver'
 
 # METADATA ********************
@@ -67,7 +68,7 @@ import uuid
 # Configuration
 # ============================================================================
 
-batch_day = "20251218"
+#batch_day = "20250114"
 job_id = datetime.now().strftime("%Y%m%d_%H%M%S")
 job_id_str = str(job_id)
 pipeline_name = "ntb_bronze_2_silver"
@@ -539,18 +540,26 @@ def main():
     print("Bronze to Silver Data Movement with Quality Validation")
     print(f"Batch Day: {batch_day}")
     print(f"Job ID: {job_id_str}")
+    print(f"Source System: {source_system}")
     print(f"Timestamp: {datetime.now()}")
     print("="*80)
     
     # Get list of Bronze tables
     print("\nFetching Bronze tables...")
-    bronze_tables = [table.name for table in spark.catalog.listTables("lh_bronze") 
-                     if not table.name.startswith("_")]
+    bronze_tables = [
+        table.name 
+        for table in spark.catalog.listTables("lh_bronze") 
+        if not table.name.startswith("_")
+    ]
     
-    print(f"Found {len(bronze_tables)} Bronze tables")
+    # Filter by source_system prefix
+    prefix = source_system.lower() + "_"
+    bronze_tables = [t for t in bronze_tables if t.startswith(prefix)]
+    
+    print(f"Found {len(bronze_tables)} Bronze tables for source_system='{source_system}'")
     
     if not bronze_tables:
-        print("No Bronze tables found!")
+        print("No Bronze tables found for the specified source system!")
         return
     
     # Get list of Silver tables
@@ -573,7 +582,7 @@ def main():
     results = {}
     
     for table_name in matching_tables:
-        success = load_bronze_to_silver(batch_day,table_name)
+        success = load_bronze_to_silver(batch_day, table_name)
         results[table_name] = "Success" if success else "Failed"
     
     # Summary
@@ -598,6 +607,7 @@ def main():
     print(f"Check logs: SELECT * FROM lh_metadata.log_table_loads WHERE job_id = '{job_id_str}'")
     print(f"Check rejections: SELECT * FROM lh_metadata.rejection_log WHERE job_id = '{job_id_str}'")
     print("="*80)
+
 
 # Execute
 main()
