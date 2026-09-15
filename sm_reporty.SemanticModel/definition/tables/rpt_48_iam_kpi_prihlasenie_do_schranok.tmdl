@@ -1,0 +1,75 @@
+table rpt_48_iam_kpi_prihlasenie_do_schranok
+	lineageTag: 7510aee6-667b-4242-a29d-96e01c951300
+	sourceLineageTag: [dbo].[rpt_48_iam_kpi_prihlasenie_do_schranok]
+
+	measure 'Rows - Report 48' = COUNTROWS('rpt_48_iam_kpi_prihlasenie_do_schranok')
+		formatString: 0
+		lineageTag: 46b38fd9-d119-4fa1-92c7-286d748bbe47
+
+		changedProperty = Name
+
+	column segment
+		dataType: string
+		lineageTag: 6608ed8d-12ee-4e13-8965-aac2e2d80bd2
+		sourceLineageTag: segment
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column pocet_vsetkych_schranok
+		dataType: int64
+		formatString: 0
+		lineageTag: e1a78029-c4d3-4572-aae7-8708ee1a5632
+		sourceLineageTag: pocet_vsetkych_schranok
+		summarizeBy: none
+		sourceColumn: pocet_vsetkych_schranok
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column pocet_unik_prihlaseni_12m
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c47da52-9ca9-45e5-86e8-a5542de8d435
+		sourceLineageTag: pocet_unik_prihlaseni_12m
+		summarizeBy: none
+		sourceColumn: pocet_unik_prihlaseni_12m
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column podiel_prihlaseni_pct
+		dataType: decimal
+		sourceProviderType: decimal(1, 1)
+		lineageTag: 669bcdba-4527-450f-b3b4-06e14ee66e65
+		sourceLineageTag: podiel_prihlaseni_pct
+		summarizeBy: none
+		sourceColumn: podiel_prihlaseni_pct
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column report_month
+		dataType: string
+		lineageTag: cde52ca8-75fc-4265-8a3c-8eb9f6c69479
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_48_iam_kpi_prihlasenie_do_schranok = entity
+		mode: directLake
+		source
+			entityName: rpt_48_iam_kpi_prihlasenie_do_schranok
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

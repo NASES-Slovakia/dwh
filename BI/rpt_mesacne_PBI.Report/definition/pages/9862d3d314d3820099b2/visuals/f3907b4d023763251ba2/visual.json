@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "f3907b4d023763251ba2",
+  "position": {
+    "x": 10.152544863305813,
+    "y": 191.97539377887355,
+    "z": 0,
+    "height": 517.7797880285965,
+    "width": 650.685829875509,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_25_upvs_pocty_transakcii_podla_senderov.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+                    }
+                  },
+                  "Property": "rezort"
+                }
+              },
+              "queryRef": "rpt_25_upvs_pocty_transakcii_podla_senderov.rezort",
+              "nativeQueryRef": "rezort"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+                    }
+                  },
+                  "Property": "count_distinct_message_id"
+                }
+              },
+              "queryRef": "rpt_25_upvs_pocty_transakcii_podla_senderov.count_distinct_message_id",
+              "nativeQueryRef": "count_distinct_message_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+                  }
+                },
+                "Property": "count_distinct_message_id"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5f83e28f48307904ed7b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dc3f5a780595d593c078",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+              }
+            },
+            "Property": "rezort"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "128423923042559c2e0e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+              }
+            },
+            "Property": "count_distinct_message_id"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

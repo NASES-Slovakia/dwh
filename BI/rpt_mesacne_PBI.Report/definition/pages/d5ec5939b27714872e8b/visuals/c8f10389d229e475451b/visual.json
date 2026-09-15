@@ -1,0 +1,173 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "c8f10389d229e475451b",
+  "position": {
+    "x": 886.9398616285257,
+    "y": 224.11921234699307,
+    "z": 5000,
+    "height": 149.86695050558808,
+    "width": 344.69398616285258,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet FO"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet FO",
+              "nativeQueryRef": "Počet FO"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet OVM"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet OVM",
+              "nativeQueryRef": "Počet OVM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet PO"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet PO",
+              "nativeQueryRef": "Počet PO"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                  }
+                },
+                "Property": "Počet FO"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "slices": [
+        {
+          "properties": {
+            "startAngle": {
+              "expr": {
+                "Literal": {
+                  "Value": "145L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Počet zriadených elektronických schránok'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4ec9128c66d4bb105e15",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "Počet FO"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9a70bdfc44001411b028",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "Počet OVM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e4921cab6a3a476b42e5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "Počet PO"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

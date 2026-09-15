@@ -1,0 +1,115 @@
+table rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci
+	lineageTag: d7ea63ff-2539-4e8f-8a88-16e3f0a5b29d
+	sourceLineageTag: [dbo].[rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci]
+
+	measure 'Rows - Report 10' = COUNTROWS('rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci')
+		formatString: 0
+		lineageTag: 4a26923a-ef29-4f9e-860a-348eb8d55ad7
+
+		changedProperty = Name
+
+	column id_spravy
+		dataType: string
+		lineageTag: 4042955f-e3f4-4153-8573-193344f46233
+		sourceLineageTag: id_spravy
+		summarizeBy: none
+		sourceColumn: id_spravy
+
+		annotation SummarizationSetBy = Automatic
+
+	column datum_prijatia_na_tlac
+		dataType: string
+		lineageTag: 4c1313cc-bb69-46c2-ab0f-8e2b2fdfe728
+		sourceLineageTag: datum_prijatia_na_tlac
+		summarizeBy: none
+		sourceColumn: datum_prijatia_na_tlac
+
+		annotation SummarizationSetBy = Automatic
+
+	column uri
+		dataType: string
+		lineageTag: f216dac5-a86e-46b2-88bc-b5e0a2f1bbca
+		sourceLineageTag: uri
+		summarizeBy: none
+		sourceColumn: uri
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nazov
+		dataType: string
+		lineageTag: e1392a2c-4526-40e6-b067-3bb392af352f
+		sourceLineageTag: Nazov
+		summarizeBy: none
+		sourceColumn: Nazov
+
+		annotation SummarizationSetBy = Automatic
+
+	column stav
+		dataType: string
+		lineageTag: 1a094eb9-8b88-44ed-a3b5-9017c2b0b549
+		sourceLineageTag: stav
+		summarizeBy: none
+		sourceColumn: stav
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b3f2745e-824f-4b16-b0f6-31ba7dab9c94
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column kod_chyby
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ebd0f68f-c367-4599-8a58-b6192080bc8d
+		sourceLineageTag: kod_chyby
+		summarizeBy: none
+		sourceColumn: kod_chyby
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column chybova_sprava
+		dataType: string
+		lineageTag: 662b228b-1162-42aa-9999-e32d92b15287
+		sourceLineageTag: chybova_sprava
+		summarizeBy: none
+		sourceColumn: chybova_sprava
+
+		annotation SummarizationSetBy = Automatic
+
+	column detail_chyby
+		dataType: string
+		lineageTag: 277cc791-2bab-45ab-9f6e-e323ddb4a8d1
+		sourceLineageTag: detail_chyby
+		summarizeBy: none
+		sourceColumn: detail_chyby
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		lineageTag: a5429440-c0e0-4e02-9414-e35326d6cd25
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci = entity
+		mode: directLake
+		source
+			entityName: rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

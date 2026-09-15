@@ -1,0 +1,47 @@
+table rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov
+	lineageTag: 46debd15-45bf-4a59-b87e-fa7f9c3b9edc
+	sourceLineageTag: [dbo].[rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov]
+
+	measure 'Rows - Report 07' = COUNTROWS('rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov')
+		formatString: 0
+		lineageTag: c4dd65e4-2ee5-4e85-9da4-38c85d1caff5
+
+		changedProperty = Name
+
+	column ZDROJ
+		dataType: string
+		lineageTag: d199ec8a-c8c3-45e3-b19b-3f6be0a9041a
+		sourceLineageTag: ZDROJ
+		summarizeBy: none
+		sourceColumn: ZDROJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCET
+		dataType: int64
+		formatString: 0
+		lineageTag: 7461d4dc-e5fd-442b-8e59-86391ea2adee
+		sourceLineageTag: POCET
+		summarizeBy: sum
+		sourceColumn: POCET
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		lineageTag: 58a59004-5267-4083-9cf4-aba2e162d8ae
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov = entity
+		mode: directLake
+		source
+			entityName: rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

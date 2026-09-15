@@ -1,0 +1,309 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "120f0b68d0ea1d1477a3",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1232.9962746141564,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_57_cnm_optimalizacia_kanalov_efektivita.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+                    }
+                  },
+                  "Property": "KANAL"
+                }
+              },
+              "queryRef": "rpt_57_cnm_optimalizacia_kanalov_efektivita.KANAL",
+              "nativeQueryRef": "KANAL"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+                    }
+                  },
+                  "Property": "TYP_IDENTITY"
+                }
+              },
+              "queryRef": "rpt_57_cnm_optimalizacia_kanalov_efektivita.TYP_IDENTITY",
+              "nativeQueryRef": "TYP_IDENTITY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+                    }
+                  },
+                  "Property": "POCET_CELKOM"
+                }
+              },
+              "queryRef": "rpt_57_cnm_optimalizacia_kanalov_efektivita.POCET_CELKOM",
+              "nativeQueryRef": "POCET_CELKOM"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+                    }
+                  },
+                  "Property": "POCET_DORUCENYCH"
+                }
+              },
+              "queryRef": "rpt_57_cnm_optimalizacia_kanalov_efektivita.POCET_DORUCENYCH",
+              "nativeQueryRef": "POCET_DORUCENYCH"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+                    }
+                  },
+                  "Property": "POCET_NA_PRVY_POKUS"
+                }
+              },
+              "queryRef": "rpt_57_cnm_optimalizacia_kanalov_efektivita.POCET_NA_PRVY_POKUS",
+              "nativeQueryRef": "POCET_NA_PRVY_POKUS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+                    }
+                  },
+                  "Property": "POCET_POKUSOV"
+                }
+              },
+              "queryRef": "rpt_57_cnm_optimalizacia_kanalov_efektivita.POCET_POKUSOV",
+              "nativeQueryRef": "POCET_POKUSOV"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+                    }
+                  },
+                  "Property": "POCET_ZLYHANYCH_POKUSOV"
+                }
+              },
+              "queryRef": "rpt_57_cnm_optimalizacia_kanalov_efektivita.POCET_ZLYHANYCH_POKUSOV",
+              "nativeQueryRef": "POCET_ZLYHANYCH_POKUSOV"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "73399a560133a63051ac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "970de2a080814795ae30",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+              }
+            },
+            "Property": "KANAL"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "597552e376094501bc7a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+              }
+            },
+            "Property": "TYP_IDENTITY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9f5e41491ec0aea52024",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+              }
+            },
+            "Property": "POCET_CELKOM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9c45ab5ba2d8889005ce",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+              }
+            },
+            "Property": "POCET_DORUCENYCH"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2b036a9136ae37e56baa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+              }
+            },
+            "Property": "POCET_NA_PRVY_POKUS"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9008e7200ed62e8dca49",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+              }
+            },
+            "Property": "POCET_POKUSOV"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "20a5de110c6c46c60a91",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_57_cnm_optimalizacia_kanalov_efektivita"
+              }
+            },
+            "Property": "POCET_ZLYHANYCH_POKUSOV"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

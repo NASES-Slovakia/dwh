@@ -1,0 +1,80 @@
+table rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie
+	lineageTag: 404dd62a-13e5-459e-b207-b5123de44594
+	sourceLineageTag: [dbo].[rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie]
+
+	measure 'Rows - Report 08' = COUNTROWS('rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie')
+		formatString: 0
+		lineageTag: 36c680f1-e309-4944-866a-58216e232b8b
+
+		changedProperty = Name
+
+	measure '8 Počet FO' =
+			
+			CALCULATE(
+			    SUM(rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie[POCET]),
+			    rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie[TYP_IDENTITY] = "FO"
+			)
+		formatString: 0
+		lineageTag: 88689690-c623-443b-955e-6320d89d3f02
+
+		changedProperty = Name
+
+	measure '8 Počet OVM' =
+			
+			CALCULATE(
+			    SUM(rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie[POCET]),
+			    rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie[TYP_IDENTITY] = "OVM"
+			)
+		formatString: 0
+		lineageTag: 96b72ffc-954c-4fce-b188-cabca40fad62
+
+		changedProperty = Name
+
+	measure '8 Počet PO' =
+			
+			CALCULATE(
+			    SUM(rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie[POCET]),
+			    rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie[TYP_IDENTITY] = "PO"
+			)
+		formatString: 0
+		lineageTag: 1f720719-82f4-4b29-bad8-9b6f33603541
+
+		changedProperty = Name
+
+	column TYP_IDENTITY
+		dataType: string
+		lineageTag: ce55251e-69b8-4ba2-bd93-fa2c1ecbd6ba
+		sourceLineageTag: TYP_IDENTITY
+		summarizeBy: none
+		sourceColumn: TYP_IDENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCET
+		dataType: int64
+		formatString: 0
+		lineageTag: ab4ccd77-a3fc-44c1-b0ca-b5fc364dda50
+		sourceLineageTag: POCET
+		summarizeBy: sum
+		sourceColumn: POCET
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		lineageTag: f7dae826-8ba7-413a-a78b-636b0ba918af
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie = entity
+		mode: directLake
+		source
+			entityName: rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

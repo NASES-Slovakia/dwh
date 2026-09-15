@@ -1,0 +1,154 @@
+table rpt_47_iam_segmentacia_pouzivatelov
+	lineageTag: 2ad18006-c042-4a6c-84a8-8830b463f31d
+	sourceLineageTag: [dbo].[rpt_47_iam_segmentacia_pouzivatelov]
+
+	measure 'Rows - Report 47' = COUNTROWS('rpt_47_iam_segmentacia_pouzivatelov')
+		formatString: 0
+		lineageTag: 622e7012-5ebb-470e-80f7-30b7478be8a8
+
+		changedProperty = Name
+
+	column uri
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fa644595-e1fc-4cc5-b9cd-9ce58543d354
+		sourceLineageTag: uri
+		summarizeBy: none
+		sourceColumn: uri
+
+		annotation SummarizationSetBy = Automatic
+
+	column login
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f86ae565-d0c7-40e1-a70a-ad41aee522b2
+		sourceLineageTag: login
+		summarizeBy: none
+		sourceColumn: login
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: ba5b5f92-52f3-4c21-b643-44a4a1221adf
+		sourceLineageTag: created_date
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_login_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4cefe0cc-15ac-4048-9afc-e64c352f8b78
+		sourceLineageTag: first_login_date
+		summarizeBy: none
+		sourceColumn: first_login_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_login_date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 0d4b5daf-33db-45a7-9062-022fb6abae53
+		sourceLineageTag: last_login_date
+		summarizeBy: none
+		sourceColumn: last_login_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column dni_od_posl_prihlasenia
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 26644dc7-8435-41cf-b5e1-84f36fd0d4fb
+		sourceLineageTag: dni_od_posl_prihlasenia
+		summarizeBy: none
+		sourceColumn: dni_od_posl_prihlasenia
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dlzka_aktivity_dni
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 00f9aa1e-f2ef-48f8-aade-81a10fbfed4f
+		sourceLineageTag: dlzka_aktivity_dni
+		summarizeBy: none
+		sourceColumn: dlzka_aktivity_dni
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column vek_identity_dni
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 091d70dc-13be-4ee7-8252-9fbead1e7ed7
+		sourceLineageTag: vek_identity_dni
+		summarizeBy: none
+		sourceColumn: vek_identity_dni
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cd_segment
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 144534ab-f858-496a-85b7-f08e31a33b68
+		sourceLineageTag: cd_segment
+		summarizeBy: none
+		sourceColumn: cd_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column nazov_segment
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3d088c92-0fdf-4f2b-90fa-f1528b6f074a
+		sourceLineageTag: nazov_segment
+		summarizeBy: none
+		sourceColumn: nazov_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 8cab8090-8a56-4216-8392-ec68fc3ff4db
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d8f2a7b4-c015-4b7a-8ec8-122a2eb0c440
+		sourceLineageTag: segment
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_47_iam_segmentacia_pouzivatelov = entity
+		mode: directLake
+		source
+			entityName: rpt_47_iam_segmentacia_pouzivatelov
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

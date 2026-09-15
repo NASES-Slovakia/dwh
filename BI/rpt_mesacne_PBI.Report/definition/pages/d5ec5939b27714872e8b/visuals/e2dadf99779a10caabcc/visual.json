@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "e2dadf99779a10caabcc",
+  "position": {
+    "x": 29.973390101117616,
+    "y": 220.03193187865887,
+    "z": 7000,
+    "height": 82.426822778073443,
+    "width": 254.77381585949973,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "kpi",
+    "query": {
+      "queryState": {
+        "Indicator": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet FO"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet FO",
+              "nativeQueryRef": "Počet FO"
+            }
+          ]
+        },
+        "TrendLine": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.report_month",
+              "nativeQueryRef": "report_month"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "indicator": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FO'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Právnické osoby'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

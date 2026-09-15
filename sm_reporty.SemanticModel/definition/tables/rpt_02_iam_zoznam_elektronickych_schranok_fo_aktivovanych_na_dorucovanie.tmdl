@@ -1,0 +1,46 @@
+table rpt_02_iam_zoznam_elektronickych_schranok_fo_aktivovanych_na_dorucovanie
+	lineageTag: c83841f6-7bab-4c45-8b51-7370dd412188
+	sourceLineageTag: [dbo].[rpt_02_iam_zoznam_elektronickych_schranok_fo_aktivovanych_na_dorucovanie]
+
+	measure 'Rows - Report 02' = COUNTROWS('rpt_02_iam_zoznam_elektronickych_schranok_fo_aktivovanych_na_dorucovanie')
+		formatString: 0
+		lineageTag: 1b2c7573-1b29-45aa-87ec-2df9e0b7f16f
+
+		changedProperty = Name
+
+	column CISLO_SCHRANKY
+		dataType: string
+		lineageTag: fed6d58c-7902-4cff-9572-13ffabf45a7c
+		sourceLineageTag: CISLO_SCHRANKY
+		summarizeBy: none
+		sourceColumn: CISLO_SCHRANKY
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBEC_SUSR_0025
+		dataType: string
+		lineageTag: 02ee76b5-1a4c-47c0-a031-90f86142c848
+		sourceLineageTag: OBEC_SUSR_0025
+		summarizeBy: none
+		sourceColumn: OBEC_SUSR_0025
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		lineageTag: 3049fbac-e5d9-46ee-9b90-0ee8f8b05f3c
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_02_iam_zoznam_elektronickych_schranok_fo_aktivovanych_na_dorucovanie = entity
+		mode: directLake
+		source
+			entityName: rpt_02_iam_zoznam_elektronickych_schranok_fo_aktivovanych_na_dorucovanie
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

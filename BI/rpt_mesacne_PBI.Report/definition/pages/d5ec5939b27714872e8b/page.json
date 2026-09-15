@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "d5ec5939b27714872e8b",
+  "displayName": "ID6 - IAM Počet zriadených elektronických schránok",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "0af1c910d05898083615",
+    "type": "Default",
+    "parameters": [
+      {
+        "name": "1511c89d0e75074b632d",
+        "boundFilter": "8804a1300bbb000a0724"
+      }
+    ],
+    "referenceScope": "CrossReport"
+  },
+  "visualInteractions": [
+    {
+      "source": "891abeed1dece1597950",
+      "target": "878a54b56cc00d030629",
+      "type": "NoFilter"
+    }
+  ]
+}

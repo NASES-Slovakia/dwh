@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "eab032a4023510ea1c00",
+  "displayName": "ID8 - IAM Počet aktivovaných elektronických schránok na doručovanie",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "c88af680a4c2077ba5ba",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport"
+  },
+  "visualInteractions": [
+    {
+      "source": "9a4a52e564077481a640",
+      "target": "ff62b741aa7839734bc5",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "81523798644483ae1890",
+  "position": {
+    "x": 511.31907766103819,
+    "y": 191.97539377887355,
+    "z": 6000,
+    "height": 305.86482171367749,
+    "width": 433.25172964342732,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "rpt_48_iam_kpi_prihlasenie_do_schranok.segment",
+              "nativeQueryRef": "segment",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+                        }
+                      },
+                      "Property": "pocet_vsetkych_schranok"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "CountNonNull(rpt_48_iam_kpi_prihlasenie_do_schranok.pocet_vsetkych_schranok)",
+              "nativeQueryRef": "Sum of pocet_vsetkych_schranok"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+                      }
+                    },
+                    "Property": "pocet_vsetkych_schranok"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Počet prihlásených schránok po segmentoch'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "777a07b2e93706b87578",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+              }
+            },
+            "Property": "segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8bc2e79c6ab5322e003c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+                  }
+                },
+                "Property": "pocet_vsetkych_schranok"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

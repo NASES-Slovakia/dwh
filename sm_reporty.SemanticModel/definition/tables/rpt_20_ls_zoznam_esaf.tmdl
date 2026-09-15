@@ -1,0 +1,149 @@
+table rpt_20_ls_zoznam_esaf
+	lineageTag: dbe1351b-3e5c-4130-af42-a79e41682087
+	sourceLineageTag: [dbo].[rpt_20_ls_zoznam_esaf]
+
+	measure 'Rows - Report 20' = COUNTROWS('rpt_20_ls_zoznam_esaf')
+		formatString: 0
+		lineageTag: 9f48b21f-e427-4426-a9c0-23521b0bbf20
+
+		changedProperty = Name
+
+	column IdServiceInstanceId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eeddf2ea-e3ef-44ed-bfbf-57d423240b18
+		sourceLineageTag: IdServiceInstanceId
+		summarizeBy: none
+		sourceColumn: IdServiceInstanceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalCode
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0ab67951-05f2-462f-8b31-59b56f9b65a5
+		sourceLineageTag: ExternalCode
+		summarizeBy: none
+		sourceColumn: ExternalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7f0a8421-fb79-4267-8da5-e61b3bc686dc
+		sourceLineageTag: ServiceName
+		summarizeBy: none
+		sourceColumn: ServiceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceType
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2bef13ab-1de4-4119-8a1a-865b83ac85cc
+		sourceLineageTag: ServiceType
+		summarizeBy: none
+		sourceColumn: ServiceType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExtId
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 24426f48-b096-4422-80e9-405910db95c3
+		sourceLineageTag: ExtId
+		summarizeBy: none
+		sourceColumn: ExtId
+
+		annotation SummarizationSetBy = Automatic
+
+	column InstitutionName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7111deaa-b702-4535-a820-7aa341d0f4b7
+		sourceLineageTag: InstitutionName
+		summarizeBy: none
+		sourceColumn: InstitutionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidFrom
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9bb5d6dc-ecaf-465b-9f8a-4a222a732a32
+		sourceLineageTag: ValidFrom
+		summarizeBy: none
+		sourceColumn: ValidFrom
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValidTo
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 737f8ee0-7e8f-4d29-a572-4194b3dc6ac7
+		sourceLineageTag: ValidTo
+		summarizeBy: none
+		sourceColumn: ValidTo
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceUrl
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 798fee8a-9e1f-4861-b45e-b52a172e5861
+		sourceLineageTag: ServiceUrl
+		summarizeBy: none
+		sourceColumn: ServiceUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceInfoURL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 44feb9a4-d330-40d6-a5d8-dc553af68e19
+		sourceLineageTag: ServiceInfoURL
+		summarizeBy: none
+		sourceColumn: ServiceInfoURL
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastUpdated
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 575a3ba6-6a91-4239-b10a-bb184d9a76dd
+		sourceLineageTag: LastUpdated
+		summarizeBy: none
+		sourceColumn: LastUpdated
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormURL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d960ab13-e757-4383-835b-c2c75365264e
+		sourceLineageTag: FormURL
+		summarizeBy: none
+		sourceColumn: FormURL
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 6dc64bcb-4580-4378-ba05-f96590771558
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_20_ls_zoznam_esaf = entity
+		mode: directLake
+		source
+			entityName: rpt_20_ls_zoznam_esaf
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

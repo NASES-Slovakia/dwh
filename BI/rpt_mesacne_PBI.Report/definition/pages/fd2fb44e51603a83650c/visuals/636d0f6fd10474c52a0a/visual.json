@@ -1,0 +1,93 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "636d0f6fd10474c52a0a",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.10218201170835,
+    "z": 6000,
+    "height": 495.92336349121871,
+    "width": 777.26450239489088,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov"
+                    }
+                  },
+                  "Property": "ZDROJ"
+                }
+              },
+              "queryRef": "rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov.ZDROJ",
+              "nativeQueryRef": "ZDROJ"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov"
+                        }
+                      },
+                      "Property": "POCET"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov.POCET)",
+              "nativeQueryRef": "Sum of POCET"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "rpt_07_iam_pocet_schranok_po_podla_zdrojovych_registrov"
+                      }
+                    },
+                    "Property": "POCET"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

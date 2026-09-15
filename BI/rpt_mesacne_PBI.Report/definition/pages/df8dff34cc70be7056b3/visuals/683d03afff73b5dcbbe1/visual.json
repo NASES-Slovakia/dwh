@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "683d03afff73b5dcbbe1",
+  "position": {
+    "x": 716.63650878126657,
+    "y": 198.91431612559873,
+    "z": 6000,
+    "height": 149.86695050558808,
+    "width": 502.05428419372004,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "nazov_segment"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.nazov_segment",
+              "nativeQueryRef": "nazov_segment",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.segment",
+              "nativeQueryRef": "segment",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "Rows - Report 47"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.Rows - Report 47",
+              "nativeQueryRef": "Počet",
+              "displayName": "Počet"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                  }
+                },
+                "Property": "Rows - Report 47"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {},
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

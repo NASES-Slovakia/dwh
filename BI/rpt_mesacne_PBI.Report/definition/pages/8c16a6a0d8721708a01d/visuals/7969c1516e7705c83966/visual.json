@@ -1,0 +1,225 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "7969c1516e7705c83966",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1232.9962746141564,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "ID_spravy"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.ID_spravy",
+              "nativeQueryRef": "ID_spravy1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "Stav"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.Stav",
+              "nativeQueryRef": "Stav"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "datum_prijatia_do_cud"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.datum_prijatia_do_cud",
+              "nativeQueryRef": "datum_prijatia_do_cud"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "URI"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.URI",
+              "nativeQueryRef": "URI"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "Nazov"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.Nazov",
+              "nativeQueryRef": "Nazov"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "Chybovy_stav"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.Chybovy_stav",
+              "nativeQueryRef": "Chybovy_stav"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "Kod_chyby"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.Kod_chyby",
+              "nativeQueryRef": "Kod_chyby"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                    }
+                  },
+                  "Property": "Chybova_sprava"
+                }
+              },
+              "queryRef": "rpt_11_cud_zoznam_chybnych_sprav.Chybova_sprava",
+              "nativeQueryRef": "Chybova_sprava"
+            }
+          ],
+          "showAll": true
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_11_cud_zoznam_chybnych_sprav"
+                  }
+                },
+                "Property": "report_month"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

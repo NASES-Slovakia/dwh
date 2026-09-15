@@ -1,0 +1,25 @@
+table rpt_51_dim_sim_sms_price
+	lineageTag: c9475eff-4192-49a6-b0ad-f8a2b7341254
+	sourceLineageTag: [dbo].[rpt_51_dim_sim_sms_price]
+
+	column SMS_UNIT_PRICE
+		dataType: double
+		sourceProviderType: decimal(25, 3)
+		lineageTag: 076bf9de-4849-45bd-b896-e062d7f87068
+		sourceLineageTag: SMS_UNIT_PRICE
+		summarizeBy: sum
+		sourceColumn: SMS_UNIT_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition rpt_51_dim_sim_sms_price = entity
+		mode: directLake
+		source
+			entityName: rpt_51_dim_sim_sms_price
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

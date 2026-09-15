@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "50ad0775ce5ad22d4485",
+  "position": {
+    "x": 29.292176689728578,
+    "y": 401.91591271953166,
+    "z": 9000,
+    "height": 81.7456093666844,
+    "width": 254.09260244811068,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "kpi",
+    "query": {
+      "queryState": {
+        "Indicator": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet OVM"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet OVM",
+              "nativeQueryRef": "Počet OVM"
+            }
+          ]
+        },
+        "TrendLine": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.report_month",
+              "nativeQueryRef": "report_month"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OVM'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

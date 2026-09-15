@@ -1,0 +1,165 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "4995a67cbe7aebb30146",
+  "position": {
+    "x": 649.11248731931164,
+    "y": 271.09356791538636,
+    "z": 5001,
+    "height": 449.30248706295112,
+    "width": 517.34589255565766,
+    "tabOrder": 5001
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+                    }
+                  },
+                  "Property": "CLASS"
+                }
+              },
+              "queryRef": "rpt_24_upvs_pocty_transakcii_podla_class.CLASS",
+              "nativeQueryRef": "CLASS",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+                        }
+                      },
+                      "Property": "count_distinct_message_id"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "CountNonNull(rpt_24_upvs_pocty_transakcii_podla_class.count_distinct_message_id)",
+              "nativeQueryRef": "Count_distinct_message_id",
+              "displayName": "Count_distinct_message_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+                      }
+                    },
+                    "Property": "count_distinct_message_id"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'RightCenter'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'outside'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4bb00d16a44a4829c782",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+                  }
+                },
+                "Property": "count_distinct_message_id"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "128a39e75b9ea2ac7280",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+              }
+            },
+            "Property": "CLASS"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

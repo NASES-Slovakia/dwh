@@ -1,0 +1,79 @@
+table rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie
+	lineageTag: e38e54dd-5cca-4ce2-977f-5a8253e8183b
+	sourceLineageTag: [dbo].[rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie]
+
+	measure 'Rows - Report 01' = COUNTROWS('rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie')
+		formatString: 0
+		lineageTag: 69ca4c0a-2b72-4209-97c7-9108bbbc03ba
+
+		changedProperty = Name
+
+	column CISLO_SCHRANKY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8ac1d637-d89f-479d-8686-631f4387ad51
+		sourceLineageTag: CISLO_SCHRANKY
+		summarizeBy: none
+		sourceColumn: CISLO_SCHRANKY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ico
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4b1026ac-34e6-4fd6-83c7-4b51228ac86a
+		sourceLineageTag: ico
+		summarizeBy: none
+		sourceColumn: ico
+
+		annotation SummarizationSetBy = Automatic
+
+	column uri
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1d729083-a6bd-4157-9bba-99c6182cd9de
+		sourceLineageTag: uri
+		summarizeBy: none
+		sourceColumn: uri
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZOBRAZOVANY_NAZOV
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: af488842-e8b0-4184-a70e-a79222de051f
+		sourceLineageTag: ZOBRAZOVANY_NAZOV
+		summarizeBy: none
+		sourceColumn: ZOBRAZOVANY_NAZOV
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBEC_SUSR_0025
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f8f9a2ae-1fde-4b74-8138-c97dfb62efba
+		sourceLineageTag: OBEC_SUSR_0025
+		summarizeBy: none
+		sourceColumn: OBEC_SUSR_0025
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: caaf024e-f500-4b44-8830-202a4788fe70
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie = entity
+		mode: directLake
+		source
+			entityName: rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

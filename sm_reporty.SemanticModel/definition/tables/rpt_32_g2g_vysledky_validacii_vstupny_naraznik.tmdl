@@ -1,0 +1,62 @@
+table rpt_32_g2g_vysledky_validacii_vstupny_naraznik
+	lineageTag: 69ba6e0c-5882-4d19-8a48-c6364488e293
+	sourceLineageTag: [dbo].[rpt_32_g2g_vysledky_validacii_vstupny_naraznik]
+
+	measure 'Rows - Report 32' = COUNTROWS('rpt_32_g2g_vysledky_validacii_vstupny_naraznik')
+		formatString: 0
+		lineageTag: 78ec541c-333f-4a5f-9f96-db6bc30c1c26
+
+		changedProperty = Name
+
+	column ERROR_CODE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 98d20cbb-34fd-4a4f-9520-130c36815a08
+		sourceLineageTag: ERROR_CODE
+		summarizeBy: none
+		sourceColumn: ERROR_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENDER_ID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 01f3e929-35ea-4db6-97a4-cb7bf7bdcfda
+		sourceLineageTag: SENDER_ID
+		summarizeBy: none
+		sourceColumn: SENDER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOC_COUNT
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 81a04e44-d633-4db4-9f29-2b731ca2a48e
+		sourceLineageTag: DOC_COUNT
+		summarizeBy: none
+		sourceColumn: DOC_COUNT
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column report_day
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: b0b8ba70-ba21-46ba-a45c-8c0c7d755167
+		sourceLineageTag: report_day
+		summarizeBy: none
+		sourceColumn: report_day
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_32_g2g_vysledky_validacii_vstupny_naraznik = entity
+		mode: directLake
+		source
+			entityName: rpt_32_g2g_vysledky_validacii_vstupny_naraznik
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,181 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "604eb0c6416ec19c0e6d",
+  "position": {
+    "x": 9.7204864989580777,
+    "y": 266.77335169362726,
+    "z": 5000,
+    "height": 453.62270328471027,
+    "width": 639.39200082035359,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_23_upvs_pocty_transakcii_ostatne_class"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_23_upvs_pocty_transakcii_ostatne_class.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_23_upvs_pocty_transakcii_ostatne_class"
+                    }
+                  },
+                  "Property": "CLASS"
+                }
+              },
+              "queryRef": "rpt_23_upvs_pocty_transakcii_ostatne_class.CLASS",
+              "nativeQueryRef": "CLASS"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_23_upvs_pocty_transakcii_ostatne_class"
+                        }
+                      },
+                      "Property": "count_distinct_message_id"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(rpt_23_upvs_pocty_transakcii_ostatne_class.count_distinct_message_id)",
+              "nativeQueryRef": "Sum of count_distinct_message_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "rpt_23_upvs_pocty_transakcii_ostatne_class"
+                      }
+                    },
+                    "Property": "count_distinct_message_id"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "350.87376633108227D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "rpt_23_upvs_pocty_transakcii_ostatne_class.CLASS"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "175.27757341166065D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(rpt_23_upvs_pocty_transakcii_ostatne_class.count_distinct_message_id)"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "28bd1c58a11cda0c8126",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_23_upvs_pocty_transakcii_ostatne_class"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bc7fb05777d70de5db57",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_23_upvs_pocty_transakcii_ostatne_class"
+              }
+            },
+            "Property": "CLASS"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "724f70b52606e36b5391",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_23_upvs_pocty_transakcii_ostatne_class"
+                  }
+                },
+                "Property": "count_distinct_message_id"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

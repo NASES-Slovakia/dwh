@@ -1,0 +1,64 @@
+table rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu
+	lineageTag: 1dc76b27-889f-45db-9ac1-09f1acc0c9f3
+	sourceLineageTag: [dbo].[rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu]
+
+	measure 'Rows - Report 03' = COUNTROWS('rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu')
+		formatString: 0
+		lineageTag: 60a57a09-b447-4bdb-a365-5ac343189098
+
+		changedProperty = Name
+
+	column ico
+		dataType: string
+		lineageTag: 291b7773-d398-49f4-be06-15dc17f4e31a
+		sourceLineageTag: ico
+		summarizeBy: none
+		sourceColumn: ico
+
+		annotation SummarizationSetBy = Automatic
+
+	column suffix
+		dataType: string
+		lineageTag: c3aeca16-e905-4f6d-bd6f-997003736298
+		sourceLineageTag: suffix
+		summarizeBy: none
+		sourceColumn: suffix
+
+		annotation SummarizationSetBy = Automatic
+
+	column nazov
+		dataType: string
+		lineageTag: 7ca882ef-082b-4ef9-9676-64a4213d9da0
+		sourceLineageTag: nazov
+		summarizeBy: none
+		sourceColumn: nazov
+
+		annotation SummarizationSetBy = Automatic
+
+	column uri
+		dataType: string
+		lineageTag: 19ac8f35-e20b-4845-8ad4-8786da26a100
+		sourceLineageTag: uri
+		summarizeBy: none
+		sourceColumn: uri
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		lineageTag: efb8bb10-499a-48e6-b7ff-d479748d8fcb
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu = entity
+		mode: directLake
+		source
+			entityName: rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

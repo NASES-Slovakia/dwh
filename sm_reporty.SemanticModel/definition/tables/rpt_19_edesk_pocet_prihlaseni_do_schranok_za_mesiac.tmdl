@@ -1,0 +1,117 @@
+table rpt_19_edesk_pocet_prihlaseni_do_schranok_za_mesiac
+	lineageTag: bf309971-ec43-47f5-85f9-ded9a21fefaf
+	sourceLineageTag: [dbo].[rpt_19_edesk_pocet_prihlaseni_do_schranok_za_mesiac]
+
+	measure 'Rows - Report 19' = COUNTROWS('rpt_19_edesk_pocet_prihlaseni_do_schranok_za_mesiac')
+		formatString: 0
+		lineageTag: d9abef7d-9a54-4d59-9a61-f3a5c87be0aa
+
+		changedProperty = Name
+
+	column datum
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8c9892cc-4bb1-4a6b-89d6-4be406a6695b
+		sourceLineageTag: datum
+		summarizeBy: none
+		sourceColumn: datum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FO
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 925613b9-0e59-44a2-a08f-eee43b8f3177
+		sourceLineageTag: FO
+		summarizeBy: none
+		sourceColumn: FO
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column PO
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1b9fa6f0-b406-4c6d-b467-a98420be94dc
+		sourceLineageTag: PO
+		summarizeBy: none
+		sourceColumn: PO
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column IVS
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 360d0d86-a466-438d-9743-8b092f370fb9
+		sourceLineageTag: IVS
+		summarizeBy: none
+		sourceColumn: IVS
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column unikatne_prih_spolu_FO
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 5b3915cc-08c9-408b-ba49-69547b94991f
+		sourceLineageTag: unikatne_prih_spolu_FO
+		summarizeBy: none
+		sourceColumn: unikatne_prih_spolu_FO
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column unikatne_prih_spolu_PO
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d6fc4dc4-0e24-4b5a-8523-251f42125bdf
+		sourceLineageTag: unikatne_prih_spolu_PO
+		summarizeBy: none
+		sourceColumn: unikatne_prih_spolu_PO
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column unikatne_prih_spolu_IVS
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 113236e7-44a9-4083-802a-ffa535493236
+		sourceLineageTag: unikatne_prih_spolu_IVS
+		summarizeBy: none
+		sourceColumn: unikatne_prih_spolu_IVS
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 0da52968-25dc-453b-8bb2-a6fdc7d87d23
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_19_edesk_pocet_prihlaseni_do_schranok_za_mesiac = entity
+		mode: directLake
+		source
+			entityName: rpt_19_edesk_pocet_prihlaseni_do_schranok_za_mesiac
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

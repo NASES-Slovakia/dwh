@@ -1,0 +1,150 @@
+table rpt_51_cnm_simulacia_podiel_kanalov_sms
+	lineageTag: 97d9dbfb-212d-443b-ab5e-5f2555e9fb71
+	sourceLineageTag: [dbo].[rpt_51_cnm_simulacia_podiel_kanalov_sms]
+
+	measure 'Rows - Report 51' = COUNTROWS('rpt_51_cnm_simulacia_podiel_kanalov_sms')
+		formatString: 0
+		lineageTag: a4c97de4-9829-4635-9be0-860663bbaa5d
+
+		changedProperty = Name
+
+	measure 'Pocet dorucenych' = SUM('rpt_51_cnm_simulacia_podiel_kanalov_sms'[POCET_DORUCENYCH])
+		formatString: 0
+		lineageTag: ec627d24-200b-42f0-8d6e-8fb0cd5f5377
+
+		changedProperty = Name
+
+	measure POCET_NEDORUCENYCH = [pocet celkom] - [Pocet dorucenych]
+		formatString: 0
+		lineageTag: 125d7a79-e33f-4962-b36a-2aedcff35bcd
+
+		changedProperty = Name
+
+	measure 'pocet celkom' = sum(rpt_51_cnm_simulacia_podiel_kanalov_sms[POCET_CELKOM])
+		formatString: 0
+		lineageTag: ce1b86e5-62ce-40e9-8bb5-7f452b523d00
+
+		changedProperty = Name
+
+	measure 'Aktuálne náklady' =
+			
+			SUMX (
+			    rpt_51_cnm_simulacia_podiel_kanalov_sms,
+			    rpt_51_cnm_simulacia_podiel_kanalov_sms[POCET_CELKOM]
+			        * RELATED ( rpt_51_dim_cnm_channel[UNIT_COST] )
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d81cec8b-5b02-4b3f-aba9-9dd6e3d8a05b
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Simulované náklady (podiel)' =
+			
+			VAR pShift   = COALESCE ( SELECTEDVALUE ( rpt_51_dim_sim_sms_share_change[SMS_SHARE_CHANGE_PCT] ), 0 ) / 100.0
+			VAR smsObjem = CALCULATE ( SUM ( rpt_51_cnm_simulacia_podiel_kanalov_sms[POCET_CELKOM] ), rpt_51_dim_cnm_channel[KANAL] = "SMS" )
+			VAR cenaSMS  = CALCULATE ( MAX ( rpt_51_dim_cnm_channel[UNIT_COST] ), rpt_51_dim_cnm_channel[KANAL]  = "SMS" )
+			VAR cenaEmail= CALCULATE ( MAX ( rpt_51_dim_cnm_channel[UNIT_COST] ), rpt_51_dim_cnm_channel[KANAL]  = "Email" )
+			VAR presun   = smsObjem * pShift
+			-- presunutý objem už nestojí cenu SMS ale cenu Email → korekcia je záporná (úspora)
+			RETURN
+			    [Aktuálne náklady] + presun * ( cenaEmail - cenaSMS )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c26bf99b-a139-498e-9acc-60e6a7f11749
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Dopad %' =
+			
+			DIVIDE (
+			    [Simulované náklady (podiel)] - [Aktuálne náklady],
+			    [Aktuálne náklady]
+			)
+		lineageTag: 2585a3be-e093-4dc0-a686-711bac805d78
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KANAL
+		dataType: string
+		lineageTag: 7db9d957-c36e-4af2-932b-574d0f22903c
+		sourceLineageTag: KANAL
+		summarizeBy: none
+		sourceColumn: KANAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENDING_METHOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 160792e9-7441-4a6e-abc9-ff4bd207990d
+		sourceLineageTag: SENDING_METHOD
+		summarizeBy: none
+		sourceColumn: SENDING_METHOD
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCET_CELKOM
+		dataType: int64
+		formatString: 0
+		lineageTag: b1e93dc6-a0f8-4820-9bc1-2d844756543b
+		sourceLineageTag: POCET_CELKOM
+		summarizeBy: none
+		sourceColumn: POCET_CELKOM
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column POCET_DORUCENYCH
+		dataType: int64
+		formatString: 0
+		lineageTag: 853c27d3-225c-465d-bc18-9339c6a2a310
+		sourceLineageTag: POCET_DORUCENYCH
+		summarizeBy: none
+		sourceColumn: POCET_DORUCENYCH
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column DELIVERY_RATE
+		dataType: double
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		sourceProviderType: float
+		lineageTag: f3c217cf-5c92-47e5-a1b6-eb187b54d745
+		sourceLineageTag: DELIVERY_RATE
+		summarizeBy: none
+		sourceColumn: DELIVERY_RATE
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column report_month
+		dataType: string
+		lineageTag: 5b305634-afd6-476c-9b78-d44ae392c8ac
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_51_cnm_simulacia_podiel_kanalov_sms = entity
+		mode: directLake
+		source
+			entityName: rpt_51_cnm_simulacia_podiel_kanalov_sms
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,188 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "23851062313d186cca59",
+  "position": {
+    "x": 9.7204864989580777,
+    "y": 307.81540580033914,
+    "z": 5003,
+    "height": 150.12751370613032,
+    "width": 424.46124378783605,
+    "tabOrder": 5003
+  },
+  "visual": {
+    "visualType": "gauge",
+    "query": {
+      "queryState": {
+        "MaxValue": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_49_sm_kpi_statny_messenger"
+                        }
+                      },
+                      "Property": "POCET_VSETKYCH"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "CountNonNull(rpt_49_sm_kpi_statny_messenger.POCET_VSETKYCH)",
+              "nativeQueryRef": "Sum of POCET_VSETKYCH"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_49_sm_kpi_statny_messenger"
+                        }
+                      },
+                      "Property": "USPESNOST"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "CountNonNull(rpt_49_sm_kpi_statny_messenger.USPESNOST)",
+              "nativeQueryRef": "Sum of USPESNOST"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_49_sm_kpi_statny_messenger"
+                        }
+                      },
+                      "Property": "POCET_USPESNYCH"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "CountNonNull(rpt_49_sm_kpi_statny_messenger.POCET_USPESNYCH)",
+              "nativeQueryRef": "Sum of POCET_USPESNYCH"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "rpt_49_sm_kpi_statny_messenger"
+                      }
+                    },
+                    "Property": "POCET_USPESNYCH"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Počet úspešných vs všetkých interakcií '"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cb5089910b3a52ad705c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_49_sm_kpi_statny_messenger"
+                  }
+                },
+                "Property": "POCET_VSETKYCH"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "11ba93fd4eee439e3396",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_49_sm_kpi_statny_messenger"
+                  }
+                },
+                "Property": "POCET_USPESNYCH"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0bc52b3d95b3281a87e2",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_49_sm_kpi_statny_messenger"
+                  }
+                },
+                "Property": "USPESNOST"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

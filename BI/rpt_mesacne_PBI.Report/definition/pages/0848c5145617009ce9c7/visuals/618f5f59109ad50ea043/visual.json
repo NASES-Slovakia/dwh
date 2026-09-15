@@ -1,0 +1,214 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "618f5f59109ad50ea043",
+  "position": {
+    "x": 10.152544863305813,
+    "y": 192.89835240281045,
+    "z": 0,
+    "height": 101.52544863305813,
+    "width": 503.93540866954311,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_49_sm_kpi_statny_messenger"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_49_sm_kpi_statny_messenger.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_49_sm_kpi_statny_messenger"
+                    }
+                  },
+                  "Property": "POCET_VSETKYCH"
+                }
+              },
+              "queryRef": "rpt_49_sm_kpi_statny_messenger.POCET_VSETKYCH",
+              "nativeQueryRef": "POCET_VSETKYCH"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_49_sm_kpi_statny_messenger"
+                    }
+                  },
+                  "Property": "POCET_USPESNYCH"
+                }
+              },
+              "queryRef": "rpt_49_sm_kpi_statny_messenger.POCET_USPESNYCH",
+              "nativeQueryRef": "POCET_USPESNYCH"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_49_sm_kpi_statny_messenger"
+                    }
+                  },
+                  "Property": "USPESNOST"
+                }
+              },
+              "queryRef": "rpt_49_sm_kpi_statny_messenger.USPESNOST",
+              "nativeQueryRef": "USPESNOST"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_49_sm_kpi_statny_messenger"
+                  }
+                },
+                "Property": "POCET_VSETKYCH"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "184e3296088727ee201a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_49_sm_kpi_statny_messenger"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6f5ae6836aaeb1c1208a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_49_sm_kpi_statny_messenger"
+              }
+            },
+            "Property": "POCET_VSETKYCH"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7e71db28360b0c04621d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_49_sm_kpi_statny_messenger"
+              }
+            },
+            "Property": "POCET_USPESNYCH"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a86d946706bc82e300a9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_49_sm_kpi_statny_messenger"
+              }
+            },
+            "Property": "USPESNOST"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "4f1367871a6512cd39ab",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1232.9962746141564,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci"
+                    }
+                  },
+                  "Property": "id_spravy"
+                }
+              },
+              "queryRef": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci.id_spravy",
+              "nativeQueryRef": "id_spravy"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci"
+                    }
+                  },
+                  "Property": "datum_prijatia_na_tlac"
+                }
+              },
+              "queryRef": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci.datum_prijatia_na_tlac",
+              "nativeQueryRef": "datum_prijatia_na_tlac"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci"
+                    }
+                  },
+                  "Property": "uri"
+                }
+              },
+              "queryRef": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci.uri",
+              "nativeQueryRef": "uri"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci"
+                    }
+                  },
+                  "Property": "Nazov"
+                }
+              },
+              "queryRef": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci.Nazov",
+              "nativeQueryRef": "Nazov"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci"
+                    }
+                  },
+                  "Property": "stav"
+                }
+              },
+              "queryRef": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci.stav",
+              "nativeQueryRef": "stav"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci"
+                    }
+                  },
+                  "Property": "kod_chyby"
+                }
+              },
+              "queryRef": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci.kod_chyby",
+              "nativeQueryRef": "kod_chyby"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci"
+                    }
+                  },
+                  "Property": "chybova_sprava"
+                }
+              },
+              "queryRef": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci.chybova_sprava",
+              "nativeQueryRef": "chybova_sprava"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci"
+                    }
+                  },
+                  "Property": "detail_chyby"
+                }
+              },
+              "queryRef": "rpt_10_cud_zoznam_sprav_s_chybou_pri_tlaci.detail_chyby",
+              "nativeQueryRef": "detail_chyby"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

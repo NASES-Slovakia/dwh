@@ -1,0 +1,218 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "878a54b56cc00d030629",
+  "position": {
+    "x": 394.42256519425223,
+    "y": 224.11921234699307,
+    "z": 10000,
+    "height": 279.29749866950505,
+    "width": 435.97658328898348,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.report_month",
+              "nativeQueryRef": "report_month",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet FO"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet FO",
+              "nativeQueryRef": "Počet FO"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet OVM"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet OVM",
+              "nativeQueryRef": "Počet OVM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet PO"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet PO",
+              "nativeQueryRef": "Počet PO"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                  }
+                },
+                "Property": "report_month"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Mesiac'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FO, OVM a PO'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FO, OVM a PO'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "455edb8044c168c761d4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e4877165d3261c535201",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "Počet FO"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4573d7e6d26c943c2423",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "Počet OVM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c63230ec8ba205956975",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "Počet PO"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

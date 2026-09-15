@@ -1,0 +1,272 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "d4a15af2645644817a3b",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1232.9962746141564,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_35_upvs_vyuzivanie_formularov_egov.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+                    }
+                  },
+                  "Property": "CLASS"
+                }
+              },
+              "queryRef": "rpt_35_upvs_vyuzivanie_formularov_egov.CLASS",
+              "nativeQueryRef": "CLASS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+                    }
+                  },
+                  "Property": "MESSAGE_TYPE"
+                }
+              },
+              "queryRef": "rpt_35_upvs_vyuzivanie_formularov_egov.MESSAGE_TYPE",
+              "nativeQueryRef": "MESSAGE_TYPE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+                    }
+                  },
+                  "Property": "POSP_ID"
+                }
+              },
+              "queryRef": "rpt_35_upvs_vyuzivanie_formularov_egov.POSP_ID",
+              "nativeQueryRef": "POSP_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+                    }
+                  },
+                  "Property": "count_distinct_message_id"
+                }
+              },
+              "queryRef": "rpt_35_upvs_vyuzivanie_formularov_egov.count_distinct_message_id",
+              "nativeQueryRef": "count_distinct_message_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+                  }
+                },
+                "Property": "count_distinct_message_id"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "389.1815220643442D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "rpt_35_upvs_vyuzivanie_formularov_egov.MESSAGE_TYPE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "430.2237603527207D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "rpt_35_upvs_vyuzivanie_formularov_egov.POSP_ID"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3f6a4829abcb7102621e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a351d78820b7b2094dd7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+              }
+            },
+            "Property": "CLASS"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b50ffbc758959800a556",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+              }
+            },
+            "Property": "MESSAGE_TYPE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4200e193b7cab6daac37",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+              }
+            },
+            "Property": "POSP_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9a638bde950ba18a0778",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_35_upvs_vyuzivanie_formularov_egov"
+              }
+            },
+            "Property": "count_distinct_message_id"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

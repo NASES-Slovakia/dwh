@@ -1,0 +1,52 @@
+table rpt_26_upvs_pocty_transakcii_podla_mep_class
+	lineageTag: 268b4215-9587-42d4-80da-70c19f2c456e
+	sourceLineageTag: [dbo].[rpt_26_upvs_pocty_transakcii_podla_mep_class]
+
+	measure 'Rows - Report 26' = COUNTROWS('rpt_26_upvs_pocty_transakcii_podla_mep_class')
+		formatString: 0
+		lineageTag: 1a25621f-bd3c-4199-8b7f-b3cfc9d6776d
+
+		changedProperty = Name
+
+	column CLASS
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ef2033d6-acd5-4a83-bf46-77cf9ce72f32
+		sourceLineageTag: CLASS
+		summarizeBy: none
+		sourceColumn: CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 6659c26d-0e3a-447c-ad0f-770353d6b6b5
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_distinct_message_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1a963a0f-3dc8-40d0-8a32-2d104a6a70d1
+		sourceLineageTag: count_distinct_message_id
+		summarizeBy: none
+		sourceColumn: count_distinct_message_id
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition rpt_26_upvs_pocty_transakcii_podla_mep_class = entity
+		mode: directLake
+		source
+			entityName: rpt_26_upvs_pocty_transakcii_podla_mep_class
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "d6e0c8e9ab53b0c32dc5",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1232.9962746141564,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou"
+                    }
+                  },
+                  "Property": "ico"
+                }
+              },
+              "queryRef": "rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou.ico",
+              "nativeQueryRef": "ico"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou"
+                    }
+                  },
+                  "Property": "uri"
+                }
+              },
+              "queryRef": "rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou.uri",
+              "nativeQueryRef": "uri"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou"
+                    }
+                  },
+                  "Property": "nazov"
+                }
+              },
+              "queryRef": "rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou.nazov",
+              "nativeQueryRef": "nazov"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

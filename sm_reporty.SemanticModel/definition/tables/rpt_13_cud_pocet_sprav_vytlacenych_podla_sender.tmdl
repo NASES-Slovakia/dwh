@@ -1,0 +1,81 @@
+table rpt_13_cud_pocet_sprav_vytlacenych_podla_sender
+	lineageTag: b146eff3-0b3c-4ed9-8971-710d0d3bb7c6
+	sourceLineageTag: [dbo].[rpt_13_cud_pocet_sprav_vytlacenych_podla_sender]
+
+	measure 'Rows - Report 13' = COUNTROWS('rpt_13_cud_pocet_sprav_vytlacenych_podla_sender')
+		formatString: 0
+		lineageTag: 3b160d55-cc5b-4a3c-9ac3-0909845ebb63
+
+		changedProperty = Name
+
+	column Mesiac
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: d770518a-bea0-4f05-8a9f-9c98b35bafb2
+		sourceLineageTag: Mesiac
+		summarizeBy: none
+		sourceColumn: Mesiac
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column URI
+		dataType: string
+		lineageTag: ce9164dc-6427-43d6-9140-caa6af9454dd
+		sourceLineageTag: URI
+		summarizeBy: none
+		sourceColumn: URI
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nazov
+		dataType: string
+		lineageTag: e4ea29fd-6576-43ae-b0c9-23981c1dbe16
+		sourceLineageTag: Nazov
+		summarizeBy: none
+		sourceColumn: Nazov
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stav
+		dataType: string
+		lineageTag: 453f2cb3-ff98-4922-abd2-d057726d3c4b
+		sourceLineageTag: Stav
+		summarizeBy: none
+		sourceColumn: Stav
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pocet
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e254fff9-5de7-48e5-bfee-f0ac4729e462
+		sourceLineageTag: Pocet
+		summarizeBy: none
+		sourceColumn: Pocet
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column report_month
+		dataType: string
+		lineageTag: 2379b26a-be7f-4357-b9fd-6e3dfb312274
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_13_cud_pocet_sprav_vytlacenych_podla_sender = entity
+		mode: directLake
+		source
+			entityName: rpt_13_cud_pocet_sprav_vytlacenych_podla_sender
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

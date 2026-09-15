@@ -1,0 +1,136 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "8d8b253125508ac1b0d0",
+  "position": {
+    "x": 29.973390101117616,
+    "y": 220.03193187865887,
+    "z": 6000,
+    "height": 82.426822778073443,
+    "width": 254.77381585949973,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "kpi",
+    "query": {
+      "queryState": {
+        "Indicator": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "8 Počet FO"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.8 Počet FO",
+              "nativeQueryRef": "8 Počet FO"
+            }
+          ]
+        },
+        "TrendLine": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.report_month",
+              "nativeQueryRef": "report_month"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "indicator": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FO'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fyzické osoby'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c894351e4ea2d40e48d4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+              }
+            },
+            "Property": "8 Počet FO"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7b57bc86c981526600ee",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

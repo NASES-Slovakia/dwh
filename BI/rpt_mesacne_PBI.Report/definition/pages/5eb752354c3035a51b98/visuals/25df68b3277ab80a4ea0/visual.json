@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "25df68b3277ab80a4ea0",
+  "position": {
+    "x": 531.62416738764989,
+    "y": 389.48853930136846,
+    "z": 6003,
+    "height": 116.64583798749693,
+    "width": 214.9307570325175,
+    "tabOrder": 6003
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "Dopad %"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.Dopad %",
+              "nativeQueryRef": "Dopad %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                  }
+                },
+                "Property": "Dopad %"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "45f593f173a65a076213",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "Dopad %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

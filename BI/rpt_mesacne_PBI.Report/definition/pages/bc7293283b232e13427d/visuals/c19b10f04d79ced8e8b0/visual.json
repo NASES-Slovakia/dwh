@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "c19b10f04d79ced8e8b0",
+  "position": {
+    "x": 9.7204864989580777,
+    "y": 192.249621868282,
+    "z": 5000,
+    "height": 517.34589255565766,
+    "width": 1006.6103796698809,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda"
+                    }
+                  },
+                  "Property": "Nazov"
+                }
+              },
+              "queryRef": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda.Nazov",
+              "nativeQueryRef": "Nazov"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda"
+                    }
+                  },
+                  "Property": "Uri"
+                }
+              },
+              "queryRef": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda.Uri",
+              "nativeQueryRef": "Uri"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda"
+                    }
+                  },
+                  "Property": "ServiceUrl"
+                }
+              },
+              "queryRef": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda.ServiceUrl",
+              "nativeQueryRef": "ServiceUrl"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b222114c9ed8300049ee",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3c3796c641d4933a5a0d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda"
+              }
+            },
+            "Property": "Nazov"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fa0ad3263aa8e431aedd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda"
+              }
+            },
+            "Property": "Uri"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "084e4055367258d50e8b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda"
+              }
+            },
+            "Property": "ServiceUrl"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

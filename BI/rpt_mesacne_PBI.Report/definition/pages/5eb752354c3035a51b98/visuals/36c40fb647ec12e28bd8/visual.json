@@ -1,0 +1,298 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "36c40fb647ec12e28bd8",
+  "position": {
+    "x": 10.152544863305813,
+    "y": 191.97539377887355,
+    "z": 0,
+    "height": 159.67184194108233,
+    "width": 838.969389158635,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "KANAL"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.KANAL",
+              "nativeQueryRef": "KANAL"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "SENDING_METHOD"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.SENDING_METHOD",
+              "nativeQueryRef": "SENDING_METHOD"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "POCET_CELKOM"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.POCET_CELKOM",
+              "nativeQueryRef": "POCET_CELKOM"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "POCET_DORUCENYCH"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.POCET_DORUCENYCH",
+              "nativeQueryRef": "POCET_DORUCENYCH"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "DELIVERY_RATE"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.DELIVERY_RATE",
+              "nativeQueryRef": "DELIVERY_RATE"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "Simulované náklady (podiel)"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.Simulované náklady (podiel)",
+              "nativeQueryRef": "Simulované náklady (podiel)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                  }
+                },
+                "Property": "POCET_CELKOM"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "81cfa356d35c2c707411",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4092e5c42b4009d0d0a1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "KANAL"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "07e96a76a072583050c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "SENDING_METHOD"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f90c1ccb604c45a52d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "POCET_CELKOM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "363b7763714b600905e4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "POCET_DORUCENYCH"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "420da5d91a4353d087bb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "DELIVERY_RATE"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "96c682b39c2a75242d6b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "Simulované náklady (podiel)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

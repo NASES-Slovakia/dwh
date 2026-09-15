@@ -1,0 +1,225 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "fc4c69a6-f6e4-4476-a503-62fbbf4bcafc",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "source_system": {
+              "value": {
+                "value": "@pipeline().parameters.source_system",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "batch_day": {
+              "value": {
+                "value": "@pipeline().parameters.batch_day",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "job_id": {
+              "value": {
+                "value": "@pipeline().parameters.job_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "pipeline_name": {
+              "value": "ntb_bronze_2_silver",
+              "type": "string"
+            },
+            "load_mode": {
+              "value": "catch_up",
+              "type": "string"
+            },
+            "batch_days": {
+              "value": "",
+              "type": "string"
+            },
+            "day_from": {
+              "value": "",
+              "type": "string"
+            },
+            "reject_threshold": {
+              "value": "1.0",
+              "type": "string"
+            },
+            "only_tables": {
+              "value": "",
+              "type": "string"
+            }
+          },
+          "sessionTag": {
+            "value": "@pipeline().parameters.source_system",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "ntb_bronze_2_silver",
+        "dependsOn": [
+          {
+            "activity": "ntb_landing_2_bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "2e56e90d-9c94-46e5-be40-eb122ebcfba9",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "job_id": {
+              "value": {
+                "value": "@pipeline().parameters.job_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "source_system": {
+              "value": {
+                "value": "@pipeline().parameters.source_system",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "batch_day": {
+              "value": {
+                "value": "@pipeline().parameters.batch_day",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "pipeline_name": {
+              "value": "ntb_silver_2_gold_append",
+              "type": "string"
+            }
+          },
+          "sessionTag": {
+            "value": "@pipeline().parameters.source_system",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "ntb_silver_2_gold",
+        "dependsOn": [
+          {
+            "activity": "ntb_bronze_2_silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "c296c8be-3bd1-4522-a6a8-75d82201a47e",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "job_id": {
+              "value": {
+                "value": "@pipeline().parameters.job_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "source_system": {
+              "value": {
+                "value": "@pipeline().parameters.source_system",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "batch_day": {
+              "value": {
+                "value": "@pipeline().parameters.batch_day",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "pipeline_name": {
+              "value": "ntb_landing_2_bronze",
+              "type": "string"
+            },
+            "debug_mode": {
+              "value": "false",
+              "type": "string"
+            },
+            "catch_up_mode": {
+              "value": "true",
+              "type": "string"
+            },
+            "debug_day_from": {
+              "value": "",
+              "type": "string"
+            },
+            "debug_day_to": {
+              "value": "",
+              "type": "string"
+            },
+            "debug_full_overwrite": {
+              "value": "false",
+              "type": "string"
+            },
+            "force_reload": {
+              "value": "false",
+              "type": "string"
+            },
+            "raise_on_partial": {
+              "value": "true",
+              "type": "string"
+            },
+            "max_workers": {
+              "value": "1",
+              "type": "string"
+            }
+          },
+          "sparkProperties": {
+            "undefined": {
+              "value": ""
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "ntb_landing_2_bronze",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "job_id": {
+        "type": "string"
+      },
+      "batch_day": {
+        "type": "string"
+      },
+      "source_system": {
+        "type": "string"
+      }
+    }
+  }
+}

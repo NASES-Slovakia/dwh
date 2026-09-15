@@ -1,0 +1,55 @@
+table rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou
+	lineageTag: bf61959d-f5b3-48fe-9471-91c67e19cd71
+	sourceLineageTag: [dbo].[rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou]
+
+	measure 'Rows - Report 04' = COUNTROWS('rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou')
+		formatString: 0
+		lineageTag: 4c7b09b0-500c-4a65-9cd5-83a9f2347903
+
+		changedProperty = Name
+
+	column ico
+		dataType: string
+		lineageTag: b7970d55-cf34-426d-9bea-5d24b6e934a3
+		sourceLineageTag: ico
+		summarizeBy: none
+		sourceColumn: ico
+
+		annotation SummarizationSetBy = Automatic
+
+	column uri
+		dataType: string
+		lineageTag: aa8aa8f3-e1df-4afe-a826-7575aba562d9
+		sourceLineageTag: uri
+		summarizeBy: none
+		sourceColumn: uri
+
+		annotation SummarizationSetBy = Automatic
+
+	column nazov
+		dataType: string
+		lineageTag: 88ad9341-46ff-468e-8d31-a2a9019da196
+		sourceLineageTag: nazov
+		summarizeBy: none
+		sourceColumn: nazov
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		lineageTag: 943c13d8-b9cc-4d0c-baef-d3e4aa4e228a
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou = entity
+		mode: directLake
+		source
+			entityName: rpt_04_iam_zoznam_ovm_s_aktivovanou_elektronickou_schrankou
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

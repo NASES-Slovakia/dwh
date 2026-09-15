@@ -1,0 +1,258 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "ca4282a2be08b57270e0",
+  "position": {
+    "x": 9.7204864989580777,
+    "y": 192.249621868282,
+    "z": 0,
+    "height": 513.02567633389856,
+    "width": 400.70005456816074,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_45_iam_heatmap_lokalita_obcana.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+                    }
+                  },
+                  "Property": "typ_identity"
+                }
+              },
+              "queryRef": "rpt_45_iam_heatmap_lokalita_obcana.typ_identity",
+              "nativeQueryRef": "typ_identity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+                    }
+                  },
+                  "Property": "obec"
+                }
+              },
+              "queryRef": "rpt_45_iam_heatmap_lokalita_obcana.obec",
+              "nativeQueryRef": "obec"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+                    }
+                  },
+                  "Property": "pocet_pouzivatelov"
+                }
+              },
+              "queryRef": "rpt_45_iam_heatmap_lokalita_obcana.pocet_pouzivatelov",
+              "nativeQueryRef": "pocet_pouzivatelov"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+                  }
+                },
+                "Property": "pocet_pouzivatelov"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "148.46597743380443D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "rpt_45_iam_heatmap_lokalita_obcana.obec"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "64.64317272562127D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "rpt_45_iam_heatmap_lokalita_obcana.report_month"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "40.489662155372976D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "rpt_45_iam_heatmap_lokalita_obcana.typ_identity"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5042cac531976dcbc594",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f15e0c9271d939780693",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+              }
+            },
+            "Property": "typ_identity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "15dda9997d28903ab0a2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+              }
+            },
+            "Property": "obec"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a5ac586d0ce4328809a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+              }
+            },
+            "Property": "pocet_pouzivatelov"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

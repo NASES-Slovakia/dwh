@@ -1,0 +1,59 @@
+table rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda
+	lineageTag: 90ffa012-6798-4293-8155-ff23a586017f
+	sourceLineageTag: [dbo].[rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda]
+
+	measure 'Rows - Report 21' = COUNTROWS('rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda')
+		formatString: 0
+		lineageTag: 3e65a799-0de0-4cbc-8d0b-3b85bbafe4a5
+
+		changedProperty = Name
+
+	column Nazov
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1bf841af-b081-4897-a019-fb72db171f27
+		sourceLineageTag: Nazov
+		summarizeBy: none
+		sourceColumn: Nazov
+
+		annotation SummarizationSetBy = Automatic
+
+	column Uri
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 54b072e6-db71-4028-abc0-1a052ae08b86
+		sourceLineageTag: Uri
+		summarizeBy: none
+		sourceColumn: Uri
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceUrl
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3a554480-31f4-4bd0-a3b0-2c4a74758665
+		sourceLineageTag: ServiceUrl
+		summarizeBy: none
+		sourceColumn: ServiceUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 9bc09bf7-d26e-4d73-b54d-b50a6628a2a1
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda = entity
+		mode: directLake
+		source
+			entityName: rpt_21_ls_zoznam_institucii_so_zriadenou_sluzbou_vseobecna_agenda
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

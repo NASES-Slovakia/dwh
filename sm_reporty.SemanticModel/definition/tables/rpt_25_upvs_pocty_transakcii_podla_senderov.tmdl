@@ -1,0 +1,52 @@
+table rpt_25_upvs_pocty_transakcii_podla_senderov
+	lineageTag: 15e03ea5-3f94-47dd-9203-d8a17cda6913
+	sourceLineageTag: [dbo].[rpt_25_upvs_pocty_transakcii_podla_senderov]
+
+	measure 'Rows - Report 25' = COUNTROWS('rpt_25_upvs_pocty_transakcii_podla_senderov')
+		formatString: 0
+		lineageTag: 94c3917c-9215-470e-bf7d-8a746c6cdcd0
+
+		changedProperty = Name
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: ee2d3316-8634-409f-a9a2-b84783fd4ea2
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_distinct_message_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1e2ac827-ece1-4aa2-b4af-280b3be81629
+		sourceLineageTag: count_distinct_message_id
+		summarizeBy: none
+		sourceColumn: count_distinct_message_id
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column rezort
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e98991f8-7244-4f97-922a-96987a993b8d
+		sourceLineageTag: rezort
+		summarizeBy: none
+		sourceColumn: rezort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_25_upvs_pocty_transakcii_podla_senderov = entity
+		mode: directLake
+		source
+			entityName: rpt_25_upvs_pocty_transakcii_podla_senderov
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

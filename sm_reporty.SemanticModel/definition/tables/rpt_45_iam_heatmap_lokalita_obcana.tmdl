@@ -1,0 +1,67 @@
+table rpt_45_iam_heatmap_lokalita_obcana
+	lineageTag: f16ec9bf-e5e6-4699-9a46-d93016beb79c
+	sourceLineageTag: [dbo].[rpt_45_iam_heatmap_lokalita_obcana]
+
+	measure 'Rows - Report 45' = COUNTROWS('rpt_45_iam_heatmap_lokalita_obcana')
+		formatString: 0
+		lineageTag: 726bcc7d-a52a-4be5-bf33-dd0e2b0d18aa
+
+		changedProperty = Name
+
+	column typ_identity
+		dataType: string
+		lineageTag: 33a4d33b-998e-4ec2-84d4-bcb551b5aafc
+		sourceLineageTag: typ_identity
+		summarizeBy: none
+		sourceColumn: typ_identity
+
+		annotation SummarizationSetBy = Automatic
+
+	column obec_id
+		dataType: string
+		lineageTag: 04ad19f7-e8c3-4965-9ddd-68a2a7a68458
+		sourceLineageTag: obec_id
+		summarizeBy: none
+		sourceColumn: obec_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column obec
+		dataType: string
+		lineageTag: 4fc4f2da-1b5b-4e15-bd6e-e523d19452bd
+		sourceLineageTag: obec
+		summarizeBy: none
+		sourceColumn: obec
+
+		annotation SummarizationSetBy = Automatic
+
+	column pocet_pouzivatelov
+		dataType: int64
+		formatString: 0
+		lineageTag: 27dcbeb8-3e96-481e-b37c-6688dcf35b2c
+		sourceLineageTag: pocet_pouzivatelov
+		summarizeBy: none
+		sourceColumn: pocet_pouzivatelov
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column report_month
+		dataType: string
+		lineageTag: 0cd55448-ff07-40c4-b270-a7ee6a73a9c1
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_45_iam_heatmap_lokalita_obcana = entity
+		mode: directLake
+		source
+			entityName: rpt_45_iam_heatmap_lokalita_obcana
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

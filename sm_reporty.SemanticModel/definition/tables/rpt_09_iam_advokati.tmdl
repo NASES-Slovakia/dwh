@@ -1,0 +1,64 @@
+table rpt_09_iam_advokati
+	lineageTag: 7e214c52-70d0-49fd-9ffe-f64cdb1fa751
+	sourceLineageTag: [dbo].[rpt_09_iam_advokati]
+
+	measure 'Rows - Report 09' = COUNTROWS('rpt_09_iam_advokati')
+		formatString: 0
+		lineageTag: c89b3e81-797f-49a2-9306-4f1b0bf5f483
+
+		changedProperty = Name
+
+	column URI
+		dataType: string
+		lineageTag: 51570245-ed21-4613-8ed3-3525dc8bd98e
+		sourceLineageTag: URI
+		summarizeBy: none
+		sourceColumn: URI
+
+		annotation SummarizationSetBy = Automatic
+
+	column EDESKID
+		dataType: string
+		lineageTag: 175b49bd-c113-4d78-8d0c-7810acbe17e0
+		sourceLineageTag: EDESKID
+		summarizeBy: none
+		sourceColumn: EDESKID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISPLAY_NAME
+		dataType: string
+		lineageTag: 6991fc8b-e4cc-47c4-a2d6-2e6df6eb9566
+		sourceLineageTag: DISPLAY_NAME
+		summarizeBy: none
+		sourceColumn: DISPLAY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column EDESKSTATUS
+		dataType: string
+		lineageTag: a13c5063-823c-4c83-a83c-4aef205da649
+		sourceLineageTag: EDESKSTATUS
+		summarizeBy: none
+		sourceColumn: EDESKSTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		lineageTag: 34d95b07-44b7-4f23-ac03-551b93ec0ecc
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_09_iam_advokati = entity
+		mode: directLake
+		source
+			entityName: rpt_09_iam_advokati
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

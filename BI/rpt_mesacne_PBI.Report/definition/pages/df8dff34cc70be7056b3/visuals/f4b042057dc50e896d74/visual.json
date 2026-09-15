@@ -1,0 +1,193 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "f4b042057dc50e896d74",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 494.56093666844066,
+    "width": 702.33102714209679,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.segment",
+              "nativeQueryRef": "segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "uri"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.uri",
+              "nativeQueryRef": "uri"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "login"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.login",
+              "nativeQueryRef": "login"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "dlzka_aktivity_dni"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.dlzka_aktivity_dni",
+              "nativeQueryRef": "dlzka_aktivity_dni"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "dni_od_posl_prihlasenia"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.dni_od_posl_prihlasenia",
+              "nativeQueryRef": "dni_od_posl_prihlasenia"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "vek_identity_dni"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.vek_identity_dni",
+              "nativeQueryRef": "vek_identity_dni"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_47_iam_segmentacia_pouzivatelov"
+                    }
+                  },
+                  "Property": "nazov_segment"
+                }
+              },
+              "queryRef": "rpt_47_iam_segmentacia_pouzivatelov.nazov_segment",
+              "nativeQueryRef": "nazov_segment"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

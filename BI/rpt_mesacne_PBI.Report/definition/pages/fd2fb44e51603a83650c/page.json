@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "fd2fb44e51603a83650c",
+  "displayName": "ID7 - IAM Počet zriadených elektronických schránok právnických osôb podľa zdrojových registrov",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8804a1300bbb000a0724",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "TYP_IDENTITY"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "pageBinding": {
+    "name": "9a392e84cac8c2706627",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "1511c89d0e75074b632d",
+        "boundFilter": "8804a1300bbb000a0724",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+              }
+            },
+            "Property": "TYP_IDENTITY"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport"
+  }
+}

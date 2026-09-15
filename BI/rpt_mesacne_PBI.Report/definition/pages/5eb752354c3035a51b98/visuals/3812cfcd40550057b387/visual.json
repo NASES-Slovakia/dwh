@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "3812cfcd40550057b387",
+  "position": {
+    "x": 259.3513733262667,
+    "y": 381.18191168593643,
+    "z": 6002,
+    "height": 131.98308322297558,
+    "width": 251.04474571083466,
+    "tabOrder": 6002
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "Aktuálne náklady"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.Aktuálne náklady",
+              "nativeQueryRef": "Aktuálne náklady"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                  }
+                },
+                "Property": "Aktuálne náklady"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2626fc04c08bb4b70ad5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "Aktuálne náklady"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

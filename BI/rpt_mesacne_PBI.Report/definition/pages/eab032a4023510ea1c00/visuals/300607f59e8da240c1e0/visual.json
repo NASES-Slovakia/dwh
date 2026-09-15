@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "300607f59e8da240c1e0",
+  "position": {
+    "x": 29.292176689728578,
+    "y": 401.91591271953166,
+    "z": 8000,
+    "height": 81.7456093666844,
+    "width": 254.09260244811068,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "kpi",
+    "query": {
+      "queryState": {
+        "Indicator": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "8 Počet OVM"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.8 Počet OVM",
+              "nativeQueryRef": "8 Počet OVM"
+            }
+          ]
+        },
+        "TrendLine": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.report_month",
+              "nativeQueryRef": "report_month"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OVM'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b3504a4770111c728909",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+              }
+            },
+            "Property": "8 Počet OVM"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "13b8f0d6ec5005316e3a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

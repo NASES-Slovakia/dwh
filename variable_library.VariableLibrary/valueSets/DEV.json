@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
+  "name": "DEV",
+  "variableOverrides": [
+    {
+      "name": "WorkspaceID",
+      "value": "d626fea3-3116-4af5-9cfb-9196dd43cba1"
+    },
+    {
+      "name": "MetadataLakehouseID",
+      "value": "4c73f3f2-9c1c-45d3-b6be-3607c949dc6d"
+    }
+  ]
+}

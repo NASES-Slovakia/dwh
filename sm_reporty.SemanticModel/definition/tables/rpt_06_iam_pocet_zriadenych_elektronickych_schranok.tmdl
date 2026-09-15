@@ -1,0 +1,80 @@
+table rpt_06_iam_pocet_zriadenych_elektronickych_schranok
+	lineageTag: 89bfad69-55f7-44b1-a79f-5231ea54c64b
+	sourceLineageTag: [dbo].[rpt_06_iam_pocet_zriadenych_elektronickych_schranok]
+
+	measure 'Rows - Report 06' = COUNTROWS('rpt_06_iam_pocet_zriadenych_elektronickych_schranok')
+		formatString: 0
+		lineageTag: 0bdb137a-590e-4271-bde7-7a7c23654001
+
+		changedProperty = Name
+
+	measure 'Počet FO' =
+			
+			CALCULATE(
+			    SUM(rpt_06_iam_pocet_zriadenych_elektronickych_schranok[POCET]),
+			    rpt_06_iam_pocet_zriadenych_elektronickych_schranok[TYP_IDENTITY] = "FO"
+			)
+		formatString: 0
+		lineageTag: d69bace5-9cc2-4530-91dd-cb1e656785db
+
+		changedProperty = Name
+
+	measure 'Počet OVM' =
+			
+			CALCULATE(
+			    SUM(rpt_06_iam_pocet_zriadenych_elektronickych_schranok[POCET]),
+			    rpt_06_iam_pocet_zriadenych_elektronickych_schranok[TYP_IDENTITY] = "OVM"
+			)
+		formatString: 0
+		lineageTag: 238803b7-733c-4855-838f-af7837b6ce0a
+
+		changedProperty = Name
+
+	measure 'Počet PO' =
+			
+			CALCULATE(
+			    SUM(rpt_06_iam_pocet_zriadenych_elektronickych_schranok[POCET]),
+			    rpt_06_iam_pocet_zriadenych_elektronickych_schranok[TYP_IDENTITY] = "PO"
+			)
+		formatString: 0
+		lineageTag: bb4377cb-de2a-43e8-a2c5-8433683873d8
+
+		changedProperty = Name
+
+	column TYP_IDENTITY
+		dataType: string
+		lineageTag: 1dff0e2e-2e11-49bc-9ab4-b1f7abd63b36
+		sourceLineageTag: TYP_IDENTITY
+		summarizeBy: none
+		sourceColumn: TYP_IDENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCET
+		dataType: int64
+		formatString: 0
+		lineageTag: 30d771e6-1c53-402a-b353-b3a70e9b414a
+		sourceLineageTag: POCET
+		summarizeBy: sum
+		sourceColumn: POCET
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		lineageTag: f511ca8c-e92a-450a-9650-fa3a1c88dcbf
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_06_iam_pocet_zriadenych_elektronickych_schranok = entity
+		mode: directLake
+		source
+			entityName: rpt_06_iam_pocet_zriadenych_elektronickych_schranok
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

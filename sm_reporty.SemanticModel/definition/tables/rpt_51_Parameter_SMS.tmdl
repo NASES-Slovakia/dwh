@@ -1,0 +1,28 @@
+table rpt_51_Parameter_SMS
+	lineageTag: 7cd543ea-5eb0-4485-9db0-692d65496643
+
+	measure 'Parameter_SMS Value' = SELECTEDVALUE('rpt_51_Parameter_SMS'[Parameter_SMS], 1)
+		lineageTag: a2eb8377-ec0c-4e2b-a702-2644f6ccbb0e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Parameter_SMS
+		dataType: double
+		formatString: 0
+		lineageTag: 2a826eef-4bce-4ee5-820f-a355f9a5e28a
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition rpt_51_Parameter_SMS = calculated
+		mode: import
+		source = GENERATESERIES(0, 50, 1)
+
+	annotation PBI_Id = a8350bc97d574f8295ed1b91c65f0b2c
+

@@ -1,0 +1,47 @@
+table rpt_51_dim_cnm_channel
+	lineageTag: 757addee-2759-4023-9e88-7d4b76e79ae7
+	sourceLineageTag: [dbo].[rpt_51_dim_cnm_channel]
+
+	column SENDING_METHOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 427ce94f-c143-488a-b632-2365ea08d59f
+		sourceLineageTag: SENDING_METHOD
+		summarizeBy: none
+		sourceColumn: SENDING_METHOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column KANAL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: aed5cb52-9f46-41db-a30a-ec04949424b4
+		sourceLineageTag: KANAL
+		summarizeBy: none
+		sourceColumn: KANAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIT_COST
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		sourceProviderType: decimal(4, 4)
+		lineageTag: 63df4992-f288-43c7-b71d-00f50a69a90c
+		sourceLineageTag: UNIT_COST
+		summarizeBy: none
+		sourceColumn: UNIT_COST
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition rpt_51_dim_cnm_channel = entity
+		mode: directLake
+		source
+			entityName: rpt_51_dim_cnm_channel
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

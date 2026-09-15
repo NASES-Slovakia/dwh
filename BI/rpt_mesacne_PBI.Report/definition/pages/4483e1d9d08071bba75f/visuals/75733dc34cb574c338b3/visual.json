@@ -1,0 +1,165 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "75733dc34cb574c338b3",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1232.9962746141564,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie"
+                    }
+                  },
+                  "Property": "CISLO_SCHRANKY"
+                }
+              },
+              "queryRef": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie.CISLO_SCHRANKY",
+              "nativeQueryRef": "CISLO_SCHRANKY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie"
+                    }
+                  },
+                  "Property": "ico"
+                }
+              },
+              "queryRef": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie.ico",
+              "nativeQueryRef": "ico"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie"
+                    }
+                  },
+                  "Property": "uri"
+                }
+              },
+              "queryRef": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie.uri",
+              "nativeQueryRef": "uri"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie"
+                    }
+                  },
+                  "Property": "ZOBRAZOVANY_NAZOV"
+                }
+              },
+              "queryRef": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie.ZOBRAZOVANY_NAZOV",
+              "nativeQueryRef": "ZOBRAZOVANY_NAZOV"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie"
+                    }
+                  },
+                  "Property": "OBEC_SUSR_0025"
+                }
+              },
+              "queryRef": "rpt_01_iam_zoznam_elektronickych_schranok_po_aktivovanych_na_dorucovanie.OBEC_SUSR_0025",
+              "nativeQueryRef": "OBEC_SUSR_0025"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

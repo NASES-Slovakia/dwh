@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "00fd03aa550bdec78a4d",
+  "position": {
+    "x": 25.84284147023298,
+    "y": 399.64108416467428,
+    "z": 6001,
+    "height": 93.964702823261419,
+    "width": 206.2903245889992,
+    "tabOrder": 6001
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_dim_sim_sms_share_change"
+                    }
+                  },
+                  "Property": "SMS_SHARE_CHANGE_PCT"
+                }
+              },
+              "queryRef": "rpt_51_dim_sim_sms_share_change.SMS_SHARE_CHANGE_PCT",
+              "nativeQueryRef": "SMS_SHARE_CHANGE_PCT",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Between'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "db7a1651e968e39e65b5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_dim_sim_sms_share_change"
+              }
+            },
+            "Property": "SMS_SHARE_CHANGE_PCT"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

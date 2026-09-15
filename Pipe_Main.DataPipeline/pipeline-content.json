@@ -1,0 +1,589 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "job_id": {
+              "value": "@variables('job_id')",
+              "type": "Expression"
+            },
+            "batch_day": {
+              "value": "@variables('batch_day')",
+              "type": "Expression"
+            },
+            "source_system": "CNM"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "138f5141-2109-49df-9880-a539adb8a7a8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "ff11b3d2-e9ec-4e5d-ab11-a3c3cd2ef0e7"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "CNM",
+        "dependsOn": [
+          {
+            "activity": "ntb_create_silver_tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "job_id": {
+              "value": "@variables('job_id')",
+              "type": "Expression"
+            },
+            "batch_day": {
+              "value": "@variables('batch_day')",
+              "type": "Expression"
+            },
+            "source_system": "CUD"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "138f5141-2109-49df-9880-a539adb8a7a8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "ff11b3d2-e9ec-4e5d-ab11-a3c3cd2ef0e7"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "CUD",
+        "dependsOn": [
+          {
+            "activity": "ntb_create_silver_tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "job_id": {
+              "value": "@variables('job_id')",
+              "type": "Expression"
+            },
+            "batch_day": {
+              "value": "@variables('batch_day')",
+              "type": "Expression"
+            },
+            "source_system": "EDESK"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "138f5141-2109-49df-9880-a539adb8a7a8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "ff11b3d2-e9ec-4e5d-ab11-a3c3cd2ef0e7"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "EDESK",
+        "dependsOn": [
+          {
+            "activity": "ntb_create_silver_tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "job_id": {
+              "value": "@variables('job_id')",
+              "type": "Expression"
+            },
+            "batch_day": {
+              "value": "@variables('batch_day')",
+              "type": "Expression"
+            },
+            "source_system": "G2G"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "138f5141-2109-49df-9880-a539adb8a7a8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "ff11b3d2-e9ec-4e5d-ab11-a3c3cd2ef0e7"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "G2G",
+        "dependsOn": [
+          {
+            "activity": "ntb_create_silver_tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "job_id": {
+              "value": "@variables('job_id')",
+              "type": "Expression"
+            },
+            "batch_day": {
+              "value": "@variables('batch_day')",
+              "type": "Expression"
+            },
+            "source_system": "IAM"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "138f5141-2109-49df-9880-a539adb8a7a8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "ff11b3d2-e9ec-4e5d-ab11-a3c3cd2ef0e7"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "IAM",
+        "dependsOn": [
+          {
+            "activity": "ntb_create_silver_tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "job_id": {
+              "value": "@variables('job_id')",
+              "type": "Expression"
+            },
+            "batch_day": {
+              "value": "@variables('batch_day')",
+              "type": "Expression"
+            },
+            "source_system": "LS"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "138f5141-2109-49df-9880-a539adb8a7a8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "ff11b3d2-e9ec-4e5d-ab11-a3c3cd2ef0e7"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "LS",
+        "dependsOn": [
+          {
+            "activity": "ntb_create_silver_tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "job_id": {
+              "value": "@variables('job_id')",
+              "type": "Expression"
+            },
+            "batch_day": {
+              "value": "@variables('batch_day')",
+              "type": "Expression"
+            },
+            "source_system": "METAIS"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "138f5141-2109-49df-9880-a539adb8a7a8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "ff11b3d2-e9ec-4e5d-ab11-a3c3cd2ef0e7"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "METAIS",
+        "dependsOn": [
+          {
+            "activity": "ntb_create_silver_tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {
+            "job_id": {
+              "value": "@variables('job_id')",
+              "type": "Expression"
+            },
+            "batch_day": {
+              "value": "@variables('batch_day')",
+              "type": "Expression"
+            },
+            "source_system": "SM"
+          },
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "138f5141-2109-49df-9880-a539adb8a7a8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "ff11b3d2-e9ec-4e5d-ab11-a3c3cd2ef0e7"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "SM",
+        "dependsOn": [
+          {
+            "activity": "ntb_create_silver_tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "batch_day",
+          "value": {
+            "value": "@formatDateTime(convertFromUtc(utcnow(), 'Central European Standard Time'), 'yyyyMMdd')",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set batch_day",
+        "dependsOn": []
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "job_id",
+          "value": {
+            "value": "@formatDateTime(convertFromUtc(utcnow(), 'Central European Standard Time'), 'yyyyMMddHHmmss')",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set job_id",
+        "dependsOn": []
+      },
+      {
+        "type": "IfCondition",
+        "typeProperties": {
+          "expression": {
+            "value": "@equals(dayOfMonth(utcNow()), 1)",
+            "type": "Expression"
+          },
+          "ifTrueActivities": [
+            {
+              "type": "TridentNotebook",
+              "typeProperties": {
+                "notebookId": "8b2e095a-d62a-4ce5-9df4-6b061d72eea1",
+                "workspaceId": "1c078226-a52a-40bd-8d62-4dca8f37f913",
+                "parameters": {
+                  "batch_day": {
+                    "value": {
+                      "value": "@variables('batch_day')",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  }
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "ntb_report_daily",
+              "dependsOn": []
+            },
+            {
+              "type": "TridentNotebook",
+              "typeProperties": {
+                "notebookId": "69efeb20-cfb8-417c-8249-51309d995a58",
+                "workspaceId": "1c078226-a52a-40bd-8d62-4dca8f37f913",
+                "parameters": {
+                  "report_month": {
+                    "value": "2026-06",
+                    "type": "string"
+                  },
+                  "batch_day": {
+                    "value": {
+                      "value": "@variables('batch_day')",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  }
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "ntb_report_monthly",
+              "dependsOn": [
+                {
+                  "activity": "ntb_report_daily",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ],
+          "ifFalseActivities": [
+            {
+              "type": "TridentNotebook",
+              "typeProperties": {
+                "notebookId": "8b2e095a-d62a-4ce5-9df4-6b061d72eea1",
+                "workspaceId": "1c078226-a52a-40bd-8d62-4dca8f37f913",
+                "parameters": {
+                  "batch_day": {
+                    "value": {
+                      "value": "@variables('batch_day')",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  }
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "ntb_report_daily_run",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "If First Day in Month",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": [
+          {
+            "activity": "CNM",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "CUD",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "G2G",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "LS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "METAIS",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          },
+          {
+            "activity": "EDESK",
+            "dependencyConditions": [
+              "Skipped"
+            ]
+          },
+          {
+            "activity": "IAM",
+            "dependencyConditions": [
+              "Skipped"
+            ]
+          },
+          {
+            "activity": "SM",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "b54d5526-6fe7-4df2-b113-7a70157c82a7",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "source_system": {
+              "value": "ALL",
+              "type": "string"
+            },
+            "mapping_filename": {
+              "value": "DWH_Systemy_IF_1.5.xlsx",
+              "type": "string"
+            },
+            "reload_metadata": {
+              "value": "auto",
+              "type": "string"
+            },
+            "rebuild_gold_metadata": {
+              "value": "false",
+              "type": "string"
+            },
+            "run_consistency": {
+              "value": "true",
+              "type": "string"
+            },
+            "generate_tables": {
+              "value": "true",
+              "type": "string"
+            },
+            "drop_and_recreate": {
+              "value": "false",
+              "type": "string"
+            },
+            "block_on_unmapped": {
+              "value": "false",
+              "type": "string"
+            },
+            "silver_layout": {
+              "value": "cluster",
+              "type": "string"
+            },
+            "cluster_columns": {
+              "value": "_batch_day",
+              "type": "string"
+            },
+            "job_id": {
+              "value": "",
+              "type": "string"
+            },
+            "pipeline_name": {
+              "value": "ntb_create_silver_tables",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "ntb_create_silver_tables",
+        "dependsOn": [
+          {
+            "activity": "Set batch_day",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Set job_id",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "job_id": {
+        "type": "String"
+      },
+      "batch_day": {
+        "type": "String"
+      }
+    }
+  }
+}

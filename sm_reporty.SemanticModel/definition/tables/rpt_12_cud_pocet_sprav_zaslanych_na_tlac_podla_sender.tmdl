@@ -1,0 +1,72 @@
+table rpt_12_cud_pocet_sprav_zaslanych_na_tlac_podla_sender
+	lineageTag: d4141189-6b32-4410-a661-66173ccf7d0e
+	sourceLineageTag: [dbo].[rpt_12_cud_pocet_sprav_zaslanych_na_tlac_podla_sender]
+
+	measure 'Rows - Report 12' = COUNTROWS('rpt_12_cud_pocet_sprav_zaslanych_na_tlac_podla_sender')
+		formatString: 0
+		lineageTag: cdaa27fd-4b6a-4786-900d-892a8ee56b46
+
+		changedProperty = Name
+
+	column Mesiac
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 35e0e55d-5be5-47d2-b1c0-f5bdcc44e161
+		sourceLineageTag: Mesiac
+		summarizeBy: none
+		sourceColumn: Mesiac
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column URI
+		dataType: string
+		lineageTag: f27b9c67-3732-4a0b-b0b8-5475a3024f2a
+		sourceLineageTag: URI
+		summarizeBy: none
+		sourceColumn: URI
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nazov
+		dataType: string
+		lineageTag: d3abdba1-e074-4e46-af14-5c33e5c73857
+		sourceLineageTag: Nazov
+		summarizeBy: none
+		sourceColumn: Nazov
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pocet
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2fcfd227-81b9-44a2-8d1d-9572dcd0c18f
+		sourceLineageTag: Pocet
+		summarizeBy: none
+		sourceColumn: Pocet
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column report_month
+		dataType: string
+		lineageTag: c102833a-6e35-4f56-8fd5-692200344df7
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_12_cud_pocet_sprav_zaslanych_na_tlac_podla_sender = entity
+		mode: directLake
+		source
+			entityName: rpt_12_cud_pocet_sprav_zaslanych_na_tlac_podla_sender
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

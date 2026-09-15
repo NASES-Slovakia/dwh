@@ -1,0 +1,151 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "033cce7d6057c37c29ae",
+  "position": {
+    "x": 646.07103675582448,
+    "y": 209.51160763367452,
+    "z": 5001,
+    "height": 481.78440169505768,
+    "width": 634.07257464464487,
+    "tabOrder": 5001
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+                    }
+                  },
+                  "Property": "rezort"
+                }
+              },
+              "queryRef": "rpt_25_upvs_pocty_transakcii_podla_senderov.rezort",
+              "nativeQueryRef": "rezort",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+                        }
+                      },
+                      "Property": "count_distinct_message_id"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "CountNonNull(rpt_25_upvs_pocty_transakcii_podla_senderov.count_distinct_message_id)",
+              "nativeQueryRef": "distinct_message_id",
+              "displayName": "distinct_message_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+                      }
+                    },
+                    "Property": "count_distinct_message_id"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'preferOutside'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3f1e7b9215d50c2c13d4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+              }
+            },
+            "Property": "rezort"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73fb030a287b62b14ab1",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_25_upvs_pocty_transakcii_podla_senderov"
+                  }
+                },
+                "Property": "count_distinct_message_id"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

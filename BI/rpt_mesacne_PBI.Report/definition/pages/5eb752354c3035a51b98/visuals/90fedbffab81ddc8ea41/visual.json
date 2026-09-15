@@ -1,0 +1,185 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "90fedbffab81ddc8ea41",
+  "position": {
+    "x": 832.5086787910767,
+    "y": 186.4376420352522,
+    "z": 6000,
+    "height": 307.34522177098506,
+    "width": 441.1742222418344,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                    }
+                  },
+                  "Property": "KANAL"
+                }
+              },
+              "queryRef": "rpt_51_cnm_simulacia_podiel_kanalov_sms.KANAL",
+              "nativeQueryRef": "KANAL",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": []
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                        }
+                      },
+                      "Property": "DELIVERY_RATE"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "CountNonNull(rpt_51_cnm_simulacia_podiel_kanalov_sms.DELIVERY_RATE)",
+              "nativeQueryRef": "Sum of DELIVERY_RATE"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                      }
+                    },
+                    "Property": "DELIVERY_RATE"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d439fff4a2de5c185c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+              }
+            },
+            "Property": "KANAL"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9d3c39a481c54ebd7b52",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                      }
+                    },
+                    "Property": "DELIVERY_RATE"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Aggregation": {
+                    "Expression": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                          }
+                        },
+                        "Property": "DELIVERY_RATE"
+                      }
+                    },
+                    "Function": 5
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "2e8b7434d60ce1580786",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_51_cnm_simulacia_podiel_kanalov_sms"
+                  }
+                },
+                "Property": "DELIVERY_RATE"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

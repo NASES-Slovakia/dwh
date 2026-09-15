@@ -1,0 +1,70 @@
+table rpt_49_sm_kpi_statny_messenger
+	lineageTag: d20052e1-af18-46d4-b256-2d4db368efdf
+	sourceLineageTag: [dbo].[rpt_49_sm_kpi_statny_messenger]
+
+	measure 'Rows - Report 49' = COUNTROWS('rpt_49_sm_kpi_statny_messenger')
+		formatString: 0
+		lineageTag: db28ba4e-323e-47b8-bac2-ed5b8ab68a7c
+
+		changedProperty = Name
+
+	column POCET_VSETKYCH
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c131b0f2-e1a6-4a5f-bc38-5e6896221659
+		sourceLineageTag: POCET_VSETKYCH
+		summarizeBy: none
+		sourceColumn: POCET_VSETKYCH
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column POCET_USPESNYCH
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 04a03d7e-2c99-4039-8ffc-95efa3689320
+		sourceLineageTag: POCET_USPESNYCH
+		summarizeBy: none
+		sourceColumn: POCET_USPESNYCH
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column USPESNOST
+		dataType: decimal
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		sourceProviderType: decimal(4, 4)
+		lineageTag: 26b0fbf1-e2bf-4afa-8729-182074b91345
+		sourceLineageTag: USPESNOST
+		summarizeBy: none
+		sourceColumn: USPESNOST
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 791b5c58-0495-4920-ae4b-82b709c94964
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_49_sm_kpi_statny_messenger = entity
+		mode: directLake
+		source
+			entityName: rpt_49_sm_kpi_statny_messenger
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

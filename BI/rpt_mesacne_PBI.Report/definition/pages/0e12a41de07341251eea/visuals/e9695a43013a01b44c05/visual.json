@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "e9695a43013a01b44c05",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 203.00159659393293,
+    "z": 0,
+    "height": 141.69238956891962,
+    "width": 630.1224055348589,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_48_iam_kpi_prihlasenie_do_schranok.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "rpt_48_iam_kpi_prihlasenie_do_schranok.segment",
+              "nativeQueryRef": "segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+                    }
+                  },
+                  "Property": "pocet_vsetkych_schranok"
+                }
+              },
+              "queryRef": "rpt_48_iam_kpi_prihlasenie_do_schranok.pocet_vsetkych_schranok",
+              "nativeQueryRef": "pocet_vsetkych_schranok"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+                  }
+                },
+                "Property": "pocet_vsetkych_schranok"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "23174181eb4860681253",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ad2ee6340ae03a7715d7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+              }
+            },
+            "Property": "segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7823ff6a0b0cd0eacad9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_48_iam_kpi_prihlasenie_do_schranok"
+              }
+            },
+            "Property": "pocet_vsetkych_schranok"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

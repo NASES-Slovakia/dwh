@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "ff62b741aa7839734bc5",
+  "position": {
+    "x": 399.87227248536453,
+    "y": 217.98829164449174,
+    "z": 9000,
+    "height": 288.15327301756253,
+    "width": 526.57796700372535,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.report_month",
+              "nativeQueryRef": "report_month",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "8 Počet FO"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.8 Počet FO",
+              "nativeQueryRef": "8 Počet FO"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "8 Počet OVM"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.8 Počet OVM",
+              "nativeQueryRef": "8 Počet OVM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "8 Počet PO"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.8 Počet PO",
+              "nativeQueryRef": "8 Počet PO"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                  }
+                },
+                "Property": "8 Počet FO"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

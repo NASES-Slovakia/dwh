@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "4483e1d9d08071bba75f",
+  "displayName": "ID1 - IAM Zoznam elektronických schránok právnických osôb aktivovaných na doručovanie",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "42f2a0e0c5ec3b8d285f",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport"
+  }
+}

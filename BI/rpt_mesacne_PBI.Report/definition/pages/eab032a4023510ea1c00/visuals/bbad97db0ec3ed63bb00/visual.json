@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "bbad97db0ec3ed63bb00",
+  "position": {
+    "x": 29.973390101117616,
+    "y": 311.31452900478973,
+    "z": 7000,
+    "height": 82,
+    "width": 254,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "kpi",
+    "query": {
+      "queryState": {
+        "Indicator": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "8 Počet PO"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.8 Počet PO",
+              "nativeQueryRef": "8 Počet PO"
+            }
+          ]
+        },
+        "TrendLine": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie.report_month",
+              "nativeQueryRef": "report_month"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PO'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "691a8030306000449b22",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+              }
+            },
+            "Property": "8 Počet PO"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3206ce53a07482ade318",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_08_iam_pocet_aktivovanych_schranok_na_dorucovanie"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+table rpt_35_upvs_vyuzivanie_formularov_egov
+	lineageTag: dbd0e9e2-720e-4103-9a45-515117343ed9
+	sourceLineageTag: [dbo].[rpt_35_upvs_vyuzivanie_formularov_egov]
+
+	measure 'Rows - Report 35' = COUNTROWS('rpt_35_upvs_vyuzivanie_formularov_egov')
+		formatString: 0
+		lineageTag: cbbd3630-15ff-4604-b243-1ebd5c597c81
+
+		changedProperty = Name
+
+	column CLASS
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 71397948-d490-4ba6-8138-7961625a88fc
+		sourceLineageTag: CLASS
+		summarizeBy: none
+		sourceColumn: CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column POSP_ID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1fef2174-701e-4c56-908f-b31fb19bb29e
+		sourceLineageTag: POSP_ID
+		summarizeBy: none
+		sourceColumn: POSP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MESSAGE_TYPE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 96873bdb-ad4f-4090-8775-b985b899cc5d
+		sourceLineageTag: MESSAGE_TYPE
+		summarizeBy: none
+		sourceColumn: MESSAGE_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 4fcb680f-e362-4de9-9f87-35e37e15f5c7
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_distinct_message_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 3ebb39f8-2be5-4c6e-baad-23d2d0006a73
+		sourceLineageTag: count_distinct_message_id
+		summarizeBy: none
+		sourceColumn: count_distinct_message_id
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition rpt_35_upvs_vyuzivanie_formularov_egov = entity
+		mode: directLake
+		source
+			entityName: rpt_35_upvs_vyuzivanie_formularov_egov
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

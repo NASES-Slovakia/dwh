@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "dfe6e4a90da16a339cab",
+  "position": {
+    "x": 9.7204864989580777,
+    "y": 266.77335169362726,
+    "z": 5000,
+    "height": 264.61324358274766,
+    "width": 630.75156837683528,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_24_upvs_pocty_transakcii_podla_class.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+                    }
+                  },
+                  "Property": "CLASS"
+                }
+              },
+              "queryRef": "rpt_24_upvs_pocty_transakcii_podla_class.CLASS",
+              "nativeQueryRef": "CLASS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+                    }
+                  },
+                  "Property": "count_distinct_message_id"
+                }
+              },
+              "queryRef": "rpt_24_upvs_pocty_transakcii_podla_class.count_distinct_message_id",
+              "nativeQueryRef": "count_distinct_message_id"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2a002458d60c0e5bed21",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+              }
+            },
+            "Property": "report_month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "567e714057e100865545",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+              }
+            },
+            "Property": "CLASS"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "077010b94a09092b40a7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_24_upvs_pocty_transakcii_podla_class"
+              }
+            },
+            "Property": "count_distinct_message_id"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

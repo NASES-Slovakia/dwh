@@ -1,0 +1,71 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "912555a69868946d6cce",
+  "position": {
+    "x": 29.973390101117616,
+    "y": 311.31452900478973,
+    "z": 8000,
+    "height": 82,
+    "width": 254,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "kpi",
+    "query": {
+      "queryState": {
+        "Indicator": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "Počet PO"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.Počet PO",
+              "nativeQueryRef": "Počet PO"
+            }
+          ]
+        },
+        "TrendLine": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_06_iam_pocet_zriadenych_elektronickych_schranok.report_month",
+              "nativeQueryRef": "report_month"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PO'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

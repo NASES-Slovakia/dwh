@@ -1,0 +1,154 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "07ff11328dc018e4d2ab",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1208.4725918041511,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender"
+                    }
+                  },
+                  "Property": "URI"
+                }
+              },
+              "queryRef": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender.URI",
+              "nativeQueryRef": "URI"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender"
+                    }
+                  },
+                  "Property": "Nazov"
+                }
+              },
+              "queryRef": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender.Nazov",
+              "nativeQueryRef": "Nazov"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender"
+                    }
+                  },
+                  "Property": "Stav"
+                }
+              },
+              "queryRef": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender.Stav",
+              "nativeQueryRef": "Stav"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "rpt_13_cud_pocet_sprav_vytlacenych_podla_sender"
+                  }
+                },
+                "Property": "report_month"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

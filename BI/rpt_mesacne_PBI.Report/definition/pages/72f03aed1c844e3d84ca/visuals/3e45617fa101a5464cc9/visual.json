@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "3e45617fa101a5464cc9",
+  "position": {
+    "x": 761.4381090850494,
+    "y": 77.763891991664622,
+    "z": 5002,
+    "height": 115.56578393205714,
+    "width": 271.09356791538636,
+    "tabOrder": 5002
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+                    }
+                  },
+                  "Property": "typ_identity"
+                }
+              },
+              "queryRef": "rpt_45_iam_heatmap_lokalita_obcana.typ_identity",
+              "nativeQueryRef": "typ_identity",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4632715b0ae2d73090c1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_45_iam_heatmap_lokalita_obcana"
+              }
+            },
+            "Property": "typ_identity"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

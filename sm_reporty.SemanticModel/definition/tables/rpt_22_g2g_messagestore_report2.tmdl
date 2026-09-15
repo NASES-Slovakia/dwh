@@ -1,0 +1,160 @@
+table rpt_22_g2g_messagestore_report2
+	lineageTag: 21db1fc8-a2c2-4b8b-a42d-20895d3ad1b5
+	sourceLineageTag: [dbo].[rpt_22_g2g_messagestore_report2]
+
+	measure 'Rows - Report 22' = COUNTROWS('rpt_22_g2g_messagestore_report2')
+		formatString: 0
+		lineageTag: 1b974474-0ec9-4069-9d57-8ec7411e7e98
+
+		changedProperty = Name
+
+	column MESSAGE_ID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 56467d1e-1711-47a9-8d74-e5229a29aead
+		sourceLineageTag: MESSAGE_ID
+		summarizeBy: none
+		sourceColumn: MESSAGE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLASS
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 156131ca-1935-42c8-b660-775953d38af1
+		sourceLineageTag: CLASS
+		summarizeBy: none
+		sourceColumn: CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATION_DATE
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: f0dda7aa-b88b-450a-842f-de24b8b7b1cd
+		sourceLineageTag: CREATION_DATE
+		summarizeBy: none
+		sourceColumn: CREATION_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATION_TIME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f709e241-8b52-43cf-a067-b9431cc036a0
+		sourceLineageTag: CREATION_TIME
+		summarizeBy: none
+		sourceColumn: CREATION_TIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column ERROR_CODE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3aa7dbfd-b531-475c-b37f-28da58fb3c4f
+		sourceLineageTag: ERROR_CODE
+		summarizeBy: none
+		sourceColumn: ERROR_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EVENT_NAME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8e1d061c-866c-446f-b671-bc89e5f8defc
+		sourceLineageTag: EVENT_NAME
+		summarizeBy: none
+		sourceColumn: EVENT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SENDER_ID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 89c90e2f-eada-4539-bb74-106e33907cb5
+		sourceLineageTag: SENDER_ID
+		summarizeBy: none
+		sourceColumn: SENDER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECIPIENT_ID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5442baf4-2c34-4391-ac07-4618b9a4f4c9
+		sourceLineageTag: RECIPIENT_ID
+		summarizeBy: none
+		sourceColumn: RECIPIENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CORRELATION_ID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fcc70a0a-c587-45c7-8bbd-f066f0e3e80d
+		sourceLineageTag: CORRELATION_ID
+		summarizeBy: none
+		sourceColumn: CORRELATION_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUB_MODULE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eadef2f3-e0e5-4544-a654-21e3229a42a7
+		sourceLineageTag: SUB_MODULE
+		summarizeBy: none
+		sourceColumn: SUB_MODULE
+
+		annotation SummarizationSetBy = Automatic
+
+	column POSP_ID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d2d130a1-2232-4a93-8678-466a86592c7a
+		sourceLineageTag: POSP_ID
+		summarizeBy: none
+		sourceColumn: POSP_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column POSP_VERSION
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fb5c5ac1-7e5d-4a5b-9672-62f2cfa5012d
+		sourceLineageTag: POSP_VERSION
+		summarizeBy: none
+		sourceColumn: POSP_VERSION
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_day
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 3aea528d-ae36-42f3-8060-5615418d056a
+		sourceLineageTag: report_day
+		summarizeBy: none
+		sourceColumn: report_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column ERROR_DESCRIPTION
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 70a7c951-fe2d-4318-b690-208250777596
+		sourceLineageTag: ERROR_DESCRIPTION
+		summarizeBy: none
+		sourceColumn: ERROR_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_22_g2g_messagestore_report2 = entity
+		mode: directLake
+		source
+			entityName: rpt_22_g2g_messagestore_report2
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

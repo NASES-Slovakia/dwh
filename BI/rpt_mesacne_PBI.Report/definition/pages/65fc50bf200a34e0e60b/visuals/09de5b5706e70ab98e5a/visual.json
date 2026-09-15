@@ -1,0 +1,153 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "09de5b5706e70ab98e5a",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1232.9962746141564,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu.report_month",
+              "nativeQueryRef": "Mesiac",
+              "displayName": "Mesiac"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu"
+                    }
+                  },
+                  "Property": "ico"
+                }
+              },
+              "queryRef": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu.ico",
+              "nativeQueryRef": "ico"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu"
+                    }
+                  },
+                  "Property": "suffix"
+                }
+              },
+              "queryRef": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu.suffix",
+              "nativeQueryRef": "suffix"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu"
+                    }
+                  },
+                  "Property": "nazov"
+                }
+              },
+              "queryRef": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu.nazov",
+              "nativeQueryRef": "nazov OVM",
+              "displayName": "nazov OVM"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu"
+                    }
+                  },
+                  "Property": "uri"
+                }
+              },
+              "queryRef": "rpt_03_iam_zoznam_ovm_so_schrankou_ktore_maju_matersku_identitu.uri",
+              "nativeQueryRef": "uri"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

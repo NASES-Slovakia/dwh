@@ -1,0 +1,116 @@
+table rpt_57_cnm_optimalizacia_kanalov_efektivita
+	lineageTag: 38cc7116-559e-4357-8984-e933c1d86a70
+	sourceLineageTag: [dbo].[rpt_57_cnm_optimalizacia_kanalov_efektivita]
+
+	measure 'Rows - Report 57' = COUNTROWS('rpt_57_cnm_optimalizacia_kanalov_efektivita')
+		formatString: 0
+		lineageTag: 564f0329-ee29-40c6-96cf-4a9e07129efc
+
+		changedProperty = Name
+
+	column KANAL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 176ddc23-b0fd-4874-8d27-88e89b5195ac
+		sourceLineageTag: KANAL
+		summarizeBy: none
+		sourceColumn: KANAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYP_IDENTITY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f57e1740-f61c-4aa9-85c4-8e4cdbe5c2a3
+		sourceLineageTag: TYP_IDENTITY
+		summarizeBy: none
+		sourceColumn: TYP_IDENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCET_CELKOM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1695b79b-def4-4751-81a6-b7f9edfae0aa
+		sourceLineageTag: POCET_CELKOM
+		summarizeBy: sum
+		sourceColumn: POCET_CELKOM
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCET_DORUCENYCH
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 29f09c30-5e6a-47ea-a16c-38e2789bd9b7
+		sourceLineageTag: POCET_DORUCENYCH
+		summarizeBy: sum
+		sourceColumn: POCET_DORUCENYCH
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERY_RATE
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 90ef9ee3-20bc-4b07-bc50-756c83145d27
+		sourceLineageTag: DELIVERY_RATE
+		summarizeBy: sum
+		sourceColumn: DELIVERY_RATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column POCET_POKUSOV
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: feff700c-c0c9-4923-aeb4-48993277106c
+		sourceLineageTag: POCET_POKUSOV
+		summarizeBy: sum
+		sourceColumn: POCET_POKUSOV
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCET_ZLYHANYCH_POKUSOV
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: aac4ab7f-0112-40f4-b897-ea68f1fb45b7
+		sourceLineageTag: POCET_ZLYHANYCH_POKUSOV
+		summarizeBy: sum
+		sourceColumn: POCET_ZLYHANYCH_POKUSOV
+
+		annotation SummarizationSetBy = Automatic
+
+	column POCET_NA_PRVY_POKUS
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6faf9152-8341-43a9-a0f9-309169992e1c
+		sourceLineageTag: POCET_NA_PRVY_POKUS
+		summarizeBy: sum
+		sourceColumn: POCET_NA_PRVY_POKUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 48489e1e-3118-46e9-8089-3628fc4c3b91
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_57_cnm_optimalizacia_kanalov_efektivita = entity
+		mode: directLake
+		source
+			entityName: rpt_57_cnm_optimalizacia_kanalov_efektivita
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

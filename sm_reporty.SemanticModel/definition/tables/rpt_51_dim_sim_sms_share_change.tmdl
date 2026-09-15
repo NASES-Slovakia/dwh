@@ -1,0 +1,24 @@
+table rpt_51_dim_sim_sms_share_change
+	lineageTag: 88b3fc99-6f2f-48d7-9434-7ff9bcb816dd
+	sourceLineageTag: [dbo].[rpt_51_dim_sim_sms_share_change]
+
+	column SMS_SHARE_CHANGE_PCT
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c0e75af1-66ab-4e25-879f-8237eb960c82
+		sourceLineageTag: SMS_SHARE_CHANGE_PCT
+		summarizeBy: sum
+		sourceColumn: SMS_SHARE_CHANGE_PCT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_51_dim_sim_sms_share_change = entity
+		mode: directLake
+		source
+			entityName: rpt_51_dim_sim_sms_share_change
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

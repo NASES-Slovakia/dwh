@@ -1,0 +1,4 @@
+relationship 949e2cdd-ed25-70d2-ca1e-635f149ff90f
+	fromColumn: rpt_51_cnm_simulacia_podiel_kanalov_sms.SENDING_METHOD
+	toColumn: rpt_51_dim_cnm_channel.SENDING_METHOD
+

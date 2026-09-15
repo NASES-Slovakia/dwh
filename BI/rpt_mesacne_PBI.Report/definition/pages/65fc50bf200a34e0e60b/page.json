@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "65fc50bf200a34e0e60b",
+  "displayName": "ID3 - IAM Zoznam OVM so schránkou aktivovanou na doručovanie ktoré majú materskú identitu",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "85ab9eee479d83480e55",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport"
+  }
+}

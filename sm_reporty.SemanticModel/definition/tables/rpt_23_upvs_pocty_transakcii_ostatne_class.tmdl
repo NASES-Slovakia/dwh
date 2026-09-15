@@ -1,0 +1,50 @@
+table rpt_23_upvs_pocty_transakcii_ostatne_class
+	lineageTag: c8805a25-1dea-4636-845c-1925d6a5b77b
+	sourceLineageTag: [dbo].[rpt_23_upvs_pocty_transakcii_ostatne_class]
+
+	measure 'Rows - Report 23' = COUNTROWS('rpt_23_upvs_pocty_transakcii_ostatne_class')
+		formatString: 0
+		lineageTag: 5b0baf4f-f947-4433-ad8e-4e692d1fb580
+
+		changedProperty = Name
+
+	column CLASS
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 14048eac-3a04-4531-8d98-b5e0461573f3
+		sourceLineageTag: CLASS
+		summarizeBy: none
+		sourceColumn: CLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	column count_distinct_message_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8caca9b3-4e4f-4c72-a870-b70bd2f228a1
+		sourceLineageTag: count_distinct_message_id
+		summarizeBy: sum
+		sourceColumn: count_distinct_message_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column report_month
+		dataType: string
+		sourceProviderType: varchar(2048)
+		lineageTag: 961c7856-7c49-464a-9899-907e0d9a241a
+		sourceLineageTag: report_month
+		summarizeBy: none
+		sourceColumn: report_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition rpt_23_upvs_pocty_transakcii_ostatne_class = entity
+		mode: directLake
+		source
+			entityName: rpt_23_upvs_pocty_transakcii_ostatne_class
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,306 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "f82b494ba131b1804191",
+  "position": {
+    "x": 10.218201170835551,
+    "y": 192.78339542309737,
+    "z": 0,
+    "height": 516.35976583288982,
+    "width": 1208.4725918041511,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "report_month"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.report_month",
+              "nativeQueryRef": "report_month"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "IdServiceInstanceId"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.IdServiceInstanceId",
+              "nativeQueryRef": "IdServiceInstanceId"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "ExternalCode"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.ExternalCode",
+              "nativeQueryRef": "ExternalCode"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "ServiceName"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.ServiceName",
+              "nativeQueryRef": "ServiceName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "ExtId"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.ExtId",
+              "nativeQueryRef": "ExtId"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "InstitutionName"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.InstitutionName",
+              "nativeQueryRef": "InstitutionName"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "ValidFrom"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.ValidFrom",
+              "nativeQueryRef": "ValidFrom"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "ValidTo"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.ValidTo",
+              "nativeQueryRef": "ValidTo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "ServiceUrl"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.ServiceUrl",
+              "nativeQueryRef": "ServiceUrl"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "ServiceInfoURL"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.ServiceInfoURL",
+              "nativeQueryRef": "ServiceInfoURL"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "LastUpdated"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.LastUpdated",
+              "nativeQueryRef": "LastUpdated"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "rpt_20_ls_zoznam_esaf"
+                    }
+                  },
+                  "Property": "FormURL"
+                }
+              },
+              "queryRef": "rpt_20_ls_zoznam_esaf.FormURL",
+              "nativeQueryRef": "FormURL"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f241e8f250c853008bdc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "rpt_20_ls_zoznam_esaf"
+              }
+            },
+            "Property": "InstitutionName"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "r",
+              "Entity": "rpt_20_ls_zoznam_esaf",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "r"
+                          }
+                        },
+                        "Property": "InstitutionName"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Agentúra pre podporu výskumu a vývoja'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
