@@ -70,7 +70,7 @@ from datetime import datetime
 job_id_str = str(job_id)            # do NOT regenerate job_id — it flows from Pipe_Main
 
 SILVER_LH = "lh_silver"
-GOLD_LH   = "lh_gold_append"        # THIS VARIANT: dims + facts both land here
+GOLD_LH   = "lh_gold"        # THIS VARIANT: dims + facts both land here
 META_LH   = "lh_metadata"
 META_SETUP_TABLE = f"{META_LH}.metadata_table_column_setup"
 RELATIONS_TABLE  = f"{META_LH}.table_relations"     # optional: fact -> dim FK mapping
