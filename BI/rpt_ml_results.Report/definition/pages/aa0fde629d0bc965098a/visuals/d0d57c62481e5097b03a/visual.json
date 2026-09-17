@@ -1,0 +1,189 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "d0d57c62481e5097b03a",
+  "position": {
+    "x": 746.77281212754406,
+    "y": 85.959460388782048,
+    "z": 1,
+    "height": 218,
+    "width": 282,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_iam_dormancy_train"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "ml_iam_dormancy_train.segment",
+              "nativeQueryRef": "segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_iam_dormancy_train"
+                    }
+                  },
+                  "Property": "is_dormant"
+                }
+              },
+              "queryRef": "Sum(ml_iam_dormancy_train.is_dormant)",
+              "nativeQueryRef": "is_dormant"
+            },
+            {
+              "field": {
+                "Arithmetic": {
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ml_iam_dormancy_train"
+                        }
+                      },
+                      "Property": "row_count_2"
+                    }
+                  },
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "ml_iam_dormancy_train"
+                            }
+                          },
+                          "Property": "row_count_2"
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
+                }
+              },
+              "queryRef": "ml_iam_dormancy_train.row_count_2",
+              "nativeQueryRef": "%GT row_count_2"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Trenovacie data'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fe55099e03b22d1c0860",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_iam_dormancy_train"
+              }
+            },
+            "Property": "segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1721114add6c26a9e876",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_iam_dormancy_train"
+              }
+            },
+            "Property": "row_count_2"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "8c7abd2f723ab612060c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_iam_dormancy_train"
+              }
+            },
+            "Property": "is_dormant"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fea708b914d011b7a4d8",
+        "field": {
+          "Arithmetic": {
+            "Left": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ml_iam_dormancy_train"
+                  }
+                },
+                "Property": "row_count_2"
+              }
+            },
+            "Right": {
+              "ScopedEval": {
+                "Expression": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "ml_iam_dormancy_train"
+                      }
+                    },
+                    "Property": "row_count_2"
+                  }
+                },
+                "Scope": []
+              }
+            },
+            "Operator": 3
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

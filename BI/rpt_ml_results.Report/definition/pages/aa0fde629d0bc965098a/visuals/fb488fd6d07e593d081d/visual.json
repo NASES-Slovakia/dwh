@@ -1,0 +1,137 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "fb488fd6d07e593d081d",
+  "position": {
+    "x": 17.908220914329593,
+    "y": 350.10571887514357,
+    "z": 3,
+    "height": 319.66174332078322,
+    "width": 410.99366998386415,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_iam_dormancy_train_predictions"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "ml_iam_dormancy_train_predictions.segment",
+              "nativeQueryRef": "segment",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ml_iam_dormancy_train_predictions"
+                        }
+                      },
+                      "Property": "is_dormant"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(ml_iam_dormancy_train_predictions.is_dormant)",
+              "nativeQueryRef": "Sum of is_dormant"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "ml_iam_dormancy_train_predictions"
+                      }
+                    },
+                    "Property": "is_dormant"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Predikcne data per segment'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "87b98078b0e5414012d7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ml_iam_dormancy_train_predictions"
+                  }
+                },
+                "Property": "is_dormant"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1cd96c1b95a6400e1cca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_iam_dormancy_train_predictions"
+              }
+            },
+            "Property": "segment"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
