@@ -23,7 +23,7 @@
 # META   }
 # META }
 
-# CELL ********************
+# PARAMETERS CELL ********************
 
 # ============================================================================
 # Parameters cell  (tagged 'parameters' so Fabric pipeline can override)
